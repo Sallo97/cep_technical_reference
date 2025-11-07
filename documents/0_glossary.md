@@ -121,9 +121,33 @@ Style guide:
 
 ---
 
+- **Selection Time**: the delay required to activate a specific register, bus line, or memory element and for it to become ready to perform its function.
+
+    There is no modern day equivalent.
+
+---
+
 - **Synchronous Computers**: architectures where an universal **clock** component provides space instants defining which signals are guaranteed to be stable and can be sampled reliably.
 
     This concept is still used today.
+
+---
+
+- **Temporal Cycle**: fundamental time interval of the timing system during which a defined set of micro-operations may occur.
+
+    It can be tought as the equivalent of the clock-cycle.
+
+---
+
+- **Temporal Classes**: group of micro-operations that are activated or valid during the same temporal cycle.
+
+    There is no modern day equivalent.
+
+---
+
+- **Timing System**: component in the computer's architecture responsible for coordinating operations across the machine.
+
+    It is the precursor of the modern day clock system.
 
 ---
 
