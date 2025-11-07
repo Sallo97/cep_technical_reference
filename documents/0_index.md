@@ -1,6 +1,6 @@
 <!-- 
 Style guide: 
-    the index is a list of all documents in the book, ordered in chapters. Each chapter will contain oth documents directly referring to the CEP and documents referring to historical concept necessary to better understand the context. 
+    the index is a list of all documents in the book, ordered by chapters. Each chapter will contain the documents directly referring to the CEP and documents referring to historical concept necessary to better understand the context. 
 
     Each Chapter must be a second-level heading written as < Chapter_Number >-< Name >. If possible the names must refer to a distinct component of the CEP computer.
     
@@ -13,8 +13,12 @@ Style guide:
 
 ## 1 - Main Control Unit
 - [Wilkes' Architecture](./1_wilkes_architecture.md)
-
 - [Micro-programming Control Unit](./1_micro-programming_control_unit.md)
+
+## 2 - Timing System
+
+- [Synchronous and asynchronous machines](2_synchronous_asynchronous.md)
+- [Timing System](2_timing_system.md)
 
 ## Additional Resources
 - [Glossary](./0_glossary.md) 
