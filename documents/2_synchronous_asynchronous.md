@@ -9,6 +9,20 @@ However, these signals may change at different times due to *propagation delays*
 
 A **clock** provides regularly spaced instants at which signals are guaranteed to be stable and can be sampled reliably. The clock period cannot be changed arbitrarily, because modifying it may break synchronization among the circuit elements.
 
+## Cycle Time
+The time for synchronizing depend on the highest latency operation in the machine, which is in most cases the access to the magnetic memory.
+
+More precisely the is a big time-gap between operations requiring at least a memory access and operations working entirely in the *Unità di Calcolo*. 
+
+This is due to:
+1. The time required to write onto the magnetic elements (called *nuclei*) in memory, compared to the time required by the registers (implemented concretely as flip-flops).
+
+2. Flip-flops can retain over time their content, discarding it only when it is explicitly requested. Magnetic elements instead destroy their content after some time, requiring to rewriting it constantly if they are still needed.
+
+### Maximum cycle time for the Unità di Calcolo
+The main bottleneck in the *Unità di Calcolo* resides in the parallel adder, more precisely in the time required for handling the carry over of digits.
+
+
 # Asynchronous Computers
 Unlike synchronous computers, asynchronous computers do not rely on a central clock to coordinate the timing of operations across the entire architecture.
 

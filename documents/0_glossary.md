@@ -151,6 +151,12 @@ Style guide:
 
 ---
 
+- **Unità di Calcolo**: component of the machine delegated to computations. Not to be confused with the micro-programming control unit, which has the responsability to manage the program's execution.
+
+    It can be thought as a precursor of the modern day ALU.
+
+---
+
 - **$X$-Address Order Code**: that all instructions in the architecture have exactly $X$ explicit operands.
 
     For example:

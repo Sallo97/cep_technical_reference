@@ -8,3 +8,6 @@ Style guide:
 -->
 
 # References
+
+1. G.B. Gerace, [Microprogrammed Control for Computing Systems](), IEEE TRANSACTIONS ON ELECTRONIC COMPUTERS, 1963.
+2. G.B. Gerace, [La Temporizzazione, la minimizzazione dei tempi e il controllo dinamico della CEP](http://pumax.isti.cnr.it/remote/linkdoccsce.php?authority=cnr.isti&collection=cnr.csce&idcode=1963-B0-002&langver=it), Alta Frequenza N.3, 1963.

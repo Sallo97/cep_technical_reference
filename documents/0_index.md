@@ -18,7 +18,13 @@ Style guide:
 ## 2 - Timing System
 
 - [Synchronous and asynchronous machines](2_synchronous_asynchronous.md)
-- [Timing System](2_timing_system.md)
+- [Timing System](./2_timing_system.md)
+
+## 3 - Unità di Calcolo
+- [Unità di Calcolo](./3_unità_di_calcolo.md)
+
+## 4 - Order Code
+- [Order Code](./4_order_code.md)
 
 ## Additional Resources
 - [Glossary](./0_glossary.md) 
