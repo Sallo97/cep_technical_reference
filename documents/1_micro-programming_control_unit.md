@@ -1,8 +1,6 @@
 # Micro-programming Control Unit (MCU) 
 The main control unit of the Calcolatrice Elettronica Pisana is the most important component of the architecture, responsible for the execution of instruction. The processor follows Wilkes' micro-programming principle and thus is also called a **micro-programming control unit**. 
 
-The MCU uses a 1+1 address scheme, meaning that the Order Code defines only instruction having **exactly one explicit operand and one implicit operand**.
-
 ## EXAMPLE
 ``` 
 consider the instruction ADD_A B, which states the addition between location `B` and `A`. 
@@ -75,5 +73,7 @@ $\mu_1 \prec \mu_2 \prec \epsilon_0 \prec \mu_0$
 
 For example, if the control-signals set to true addresses $\mu_2, \epsilon_0, \mu_0$, among them $\mu_0$ is selected.
 
-# Order Code
-The CEP offers $2^8$ distinct micro-order, meaning each associated micro-instruction will be represented by a byte. Usually the number of micro-order composing a high-level instruction is two.
+## Communication with the kernel
+The micro-programming control unit communicates to handle the execution with the main kernel of the CEP (main memory, *Unità di Calcolo*, *Unità degli Indirizzi*). This is done with both asynchronous and synchornous signals, depending on the type of communication.
+
+In general we denote with $\psi$ sent *synchronously*; with $\epsilon$ signals sent *asynchronously*.

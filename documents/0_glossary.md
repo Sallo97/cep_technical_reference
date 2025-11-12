@@ -67,6 +67,11 @@ Style guide:
 - **Impulsi di tensione**: used across CEP's italian paper for referring to electrical signals used across **synchronous** logical networks. 
 
 ---
+- **Kernel CEP**: indicates the main structure of the CEP, obtained as the combination of the main memory, the *Unità di Calcolo*, and the *Unità degli Indirizzi*.
+
+    Today the concept of kernel is used completely differently and generally refers to the core of Operating Systems.
+
+---
 
 - **Livelli di tensione stabile**: used across CEP's italian paper for referring to electrical signals used across **asynchronous** logical networks.
 
@@ -147,11 +152,19 @@ Style guide:
 
 - **Timing System**: component in the computer's architecture responsible for coordinating operations across the machine.
 
+    In italian it is referred as the *"temporizzatore interno"* [[2](./0_reference.md)]
+
     It is the precursor of the modern day clock system.
 
 ---
 
-- **Unità di Calcolo**: component of the machine delegated to computations. Not to be confused with the micro-programming control unit, which has the responsability to manage the program's execution.
+- **Unità degli Indirizzi**: component of the CEP delegated for constructing the concrete memory addresses.
+
+    There is no modern day equivalent.
+
+---
+
+- **Unità di Calcolo**: component of the CEP delegated to computations. Not to be confused with the micro-programming control unit, which has the responsability to manage the program's execution.
 
     It can be thought as a precursor of the modern day ALU.
 

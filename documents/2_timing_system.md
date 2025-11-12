@@ -67,3 +67,10 @@ As can be seen from the concrete schematic, there are two possible series of del
 Recall that a conditional control signal is one whose activation depends on the machine's current state or some status flag.
 
 In the CEP's timing system the control signals $x_{c_1}$ and $x_{c_2}$ are conditional. By conditioning both signals at the same time it is possible, as in the case of repetitive micro-orders, to block the pulses at register $O$ at the end of the first micro-operation and to decrease (because the control unit is not operating at the moment) the cycle time in the successive micro-operation.
+
+## Timing for handling external devices [[2]](./0_reference.md)
+After the instruction has been decoded, the cycle is cut and a synchronous signal (i.e. pulse) is sent to the controller of the requested external device. 
+
+If the device is ready, it sends back to the CEP a pulse which reactivates the cycle, letting the machine execute the instruction.
+
+If the device is not ready, the CEP wait that the device is ready. During this waiting time the CEP behaves like an asynchronous machine.

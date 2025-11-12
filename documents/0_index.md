@@ -14,17 +14,23 @@ Style guide:
 ## 1 - Main Control Unit
 - [Wilkes' Architecture](./1_wilkes_architecture.md)
 - [Micro-programming Control Unit](./1_micro-programming_control_unit.md)
+- [Kernel](./1_kernel.md)
+- [Sending and Receving Data](./1_sending_receiving_data.md)
 
 ## 2 - Timing System
 
 - [Synchronous and asynchronous machines](2_synchronous_asynchronous.md)
 - [Timing System](./2_timing_system.md)
+- [Controllo Dinamico](./2_controllo_dinamico.md)
 
 ## 3 - Unità di Calcolo
 - [Unità di Calcolo](./3_unità_di_calcolo.md)
 
 ## 4 - Order Code
 - [Order Code](./4_order_code.md)
+
+## 5 - External devices
+- [I/O](./5_external_devices.md)
 
 ## Additional Resources
 - [Glossary](./0_glossary.md) 

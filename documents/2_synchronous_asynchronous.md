@@ -46,3 +46,8 @@ Thus it is only convenient when the architecture is mainly composed of parallel 
 Across CEP's paper in italian, to distinguish across synchronous and asynchronous electrical signals, they are referred in two different ways:
 - *impulsi di tensione* $\rightarrow$ synchronous electrical signals.
 - *livelli di tensione stabile* $\rightarrow$ asynchronous electrical signals. 
+
+## CEP as both an asynchronous and synchronous machine
+The CEP is at the combinatorial level an asynchronous machine, synchronous at the sequential level. 
+
+At the level of micro-program, it is a sequential machine, with the exception of the handling of external devices for which it behaves like an asynchronous machine.
