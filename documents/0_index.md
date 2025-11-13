@@ -28,9 +28,13 @@ Style guide:
 
 ## 4 - Order Code
 - [Order Code](./4_order_code.md)
+- [Celle Parametriche](./4_celle_parametriche.md)
+- [Micro-instructions](./4_microinstructions.md)
+- [Pseudoistruzioni](./4_pseudoistruzioni.md)
+- [Automated checks](./4_automated_checks.md)
 
 ## 5 - External devices
-- [I/O](./5_external_devices.md)
+- [External Devices](./5_external_devices.md)
 
 ## Additional Resources
 - [Glossary](./0_glossary.md) 

@@ -28,6 +28,12 @@ Style guide:
 
 ---
 
+- **B-lines**: processor's register of the Manchester Mark I computer which stored operand addresses to implement iterations over contiguous data structures like arrays and vectors.
+
+    Today they are reffered to as index registers.
+
+---
+
 - **Control Register**: in the context of Wilkes' Architecture, it is a special purpose register present in the **Control Unit** which content is the address of the next micro-instruction to be executed. 
 
     In the CEP computer it is called the **0 Register**. 
@@ -67,6 +73,10 @@ Style guide:
 - **Impulsi di tensione**: used across CEP's italian paper for referring to electrical signals used across **synchronous** logical networks. 
 
 ---
+
+- **Index-registers**: processor's registers pointing to operand addresses for implement iterative operations over contiguous data structures like arrays and vectors.
+
+---
 - **Kernel CEP**: indicates the main structure of the CEP, obtained as the combination of the main memory, the *Unità di Calcolo*, and the *Unità degli Indirizzi*.
 
     Today the concept of kernel is used completely differently and generally refers to the core of Operating Systems.
@@ -89,6 +99,14 @@ Style guide:
     During program's execution, each macro-order will be decoded by the Main Control Unit (MCU), which issues the execution of its corresponding micro-instructions.
 
     There is no exact modern day equivalent, it can roughly correspond to the machine-level instructions of an Instruction Set Architecture (ISA).
+
+---
+
+- **Manchester Mark I**: one of the first stored-program computer developed by the Victoria University of Manchester in 1949. 
+
+    It is mainly known for having introduced the concept of **index-register**.
+
+    Computers today implement index-registers thanks to this machine.
 
 ---
 
@@ -126,6 +144,14 @@ Style guide:
 
 ---
 
+- **Programmazione simbolica**: programming paradigm in which the user defines programs able to modify both its local data and own code.
+
+    This paradigm was used in old computers to overcome memory limitations, by defining programs able to free their code in order to add new behaviour.
+
+    Today it is still used mainly in artificial intelligence.
+
+---
+
 - **Selection Time**: the delay required to activate a specific register, bus line, or memory element and for it to become ready to perform its function.
 
     There is no modern day equivalent.
@@ -135,6 +161,12 @@ Style guide:
 - **Synchronous Computers**: architectures where an universal **clock** component provides space instants defining which signals are guaranteed to be stable and can be sampled reliably.
 
     This concept is still used today.
+
+---
+
+- **Stored program computers**: machines which followed the Von Neumann's theoretical architecture by storing both program's code and local data onto the main memory.
+
+    Still today modern computers follow this principle.
 
 ---
 
