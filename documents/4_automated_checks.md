@@ -15,3 +15,7 @@ Instructions hare subdivided in five classes that identify different groups bein
 4. Jump instructions.
 
 5. I/O instructions between the main memory and external device (checks the parity bit, that the device is attached, etc ...).
+
+When the instruction with the check bit set to '$1$' in a class for which the automatic check is set, the CEP stops execution and an associated subprograms do the checking. The machine behaves similarly to when its handling pseudoinstructions.
+
+This functionality has been implemented to automize the checking process for complex programs (mainly regarding computing long arithmetic operations), without requiring to explicitly call the subprograms. It also reduces significantly the time and memory required to execute the program.
