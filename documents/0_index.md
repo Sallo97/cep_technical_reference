@@ -36,5 +36,8 @@ Style guide:
 ## 5 - External devices
 - [External Devices](./5_external_devices.md)
 
+## 6 - Fortran Compiler
+- [Fortran Compiler](./6_fortran_compiler.md)
+
 ## Additional Resources
 - [Glossary](./0_glossary.md) 

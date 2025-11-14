@@ -1,4 +1,4 @@
-# Pseudoistruzioni
+# Pseudoistruzioni [[3](./0_reference.md)]
 Pseudoinstruction extends the instructions offer of the CEP through the use of subprograms. They can be seen as custom-added instruction which in practice are implemented as subprograms.
 
 They share the same 36-bit structure as normal instructions. The main difference is **how** the machine execute them: 

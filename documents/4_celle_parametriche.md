@@ -1,4 +1,4 @@
-# Index Register
+# Index Register [[3](./0_reference.md)]
 With index register we indentify processor's registers whose responsability is to point to an operand's address. In this way we can use the register to implement interations over contiguous data structures like arrays or vectors.
 
 Generally the index register contains the base address of the data structure we want to iterate. At each iteration the pointer is added/subtracted by an offset (specified by the instruction or stored in another register) to obtain the complete address to the current memory location.

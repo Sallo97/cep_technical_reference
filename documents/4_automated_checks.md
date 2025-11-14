@@ -1,4 +1,4 @@
-# Automated checks
+# Automated checks [[3](./0_reference.md)]
 The CEP can be set to automatically check a specific group of instructions by for each of them executing right away a macro-program specifically designed to be sure there are no unexpected behaviours.
 
 To do so it requires to set to '$1$' the condition bit of the operation code and by setting the associated keys in the *quadro di comando*.
