@@ -1,6 +1,8 @@
 # Micro-programming Control Unit (MCU) 
 The main control unit of the Calcolatrice Elettronica Pisana is the most important component of the architecture, responsible for the execution of instruction. The processor follows Wilkes' micro-programming principle and thus is also called a **micro-programming control unit**. 
 
+In the lowest level, the CEP operates completely in binary. To handle the conversion several auxiliary programs are define at the high level [[4](./0_reference.md)].
+
 ## EXAMPLE
 ``` 
 consider the instruction ADD_A B, which states the addition between location `B` and `A`. 

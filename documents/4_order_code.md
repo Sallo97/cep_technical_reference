@@ -3,19 +3,33 @@ The CEP uses for all of its operations a 1+1 address scheme, meaning that the Or
 - exactly one explicit operand.
 - one implicit operand.
 
-Additionally for each instruction there two additional implicit 5-bit addresses, each stored in a distinct reserved region of main memory.,
+There are in total 128 normal instructions [[4](./0_reference.md)].  
+For each instruction there two additional implicit 15-bit addresses, each stored in a distinct reserved region of main memory [[2](./0_reference.md)].
 
 Finally these is an implicit return location.
+
 
 ## Instruction structure
 All instructions are 36-bit long and contain (moving from the left-most bits to the right):
 
-- operation symbol (9 bits).
+- operation symbol (9 bits):
+    
+    - The first bit determines if it is a instruction or a pseudoinstruction.
+    
+    - If it is an instruction, 7 bits determine it. [[4](./0_reference.md)] 
+
+        If it is a pseudoinstruction those 7 bits determine the entry in the jump table where it is defined. [[3](./0_reference.md)]
+    
+    - 1 bit is a control bit to specify if we want automatic check on the instruction. [[3](./0_reference.md)]
+
 - first parametric address (6 bits).
+
 - second parametric address (6 bits).
+
 - operand address (15 bits).
 
 ![image](../resources/cep_instruction.svg)
+
 
 ## Instruction classes [[2](./0_reference.md)]
 Instructions in the CEP can be grouped in two main classes: *istruzioni ordinarie* and *istruzioni speciali*. Each class interprets the two implicit 6-bit addresses of the *celle parametriche* differently.

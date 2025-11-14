@@ -33,10 +33,13 @@ Style guide:
 - [Pseudoistruzioni](./4_pseudoistruzioni.md)
 - [Automated checks](./4_automated_checks.md)
 
-## 5 - External devices
+## 5 - Main Memory
+- [Main Memory](./5_memory.md)
+
+## 6 - External devices
 - [External Devices](./5_external_devices.md)
 
-## 6 - Fortran Compiler
+## 7 - Fortran Compiler
 - [Fortran Compiler](./6_fortran_compiler.md)
 
 ## Additional Resources
