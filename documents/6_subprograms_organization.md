@@ -1,0 +1,15 @@
+# Subprograms distribution in memory
+The actual memory location of subprograms is decided during the assembly phase of the main program. The distribution process done during the assembly phases needs to solve two problems: how can the CEP tell to all programs the location in memory of their own subprograms; the second program concerns the addressing e internal reference of routines.
+
+## Determining subprograms locations [[5](./0_reference.md)]
+Assume for each program we are concerned in knowing the location of its first instruction, since each call to it just consists in a jump operation over there. Upper programs interested in knowing the start location of each of their lower-level subprograms use a **lista di trasferimento**: a list of all subprogram names of the referred program. In the program's code, each call to a subprogram refers to the associated entry in the *lista di trasferimento*. During the assembly phase, the entries in the *lista di trasferimento* will be substituted with the start location of the associated subprogram. In this way a program is not concerned with its subprogram location: it just need to know the entry associated to it in the *lista di trasferimento*.
+
+## Addressing and internal references of routines  [[5](./0_reference.md)]
+The main problem conserns the call to instructions for which we do not know if their location is static or dynamic. A program translator has the responsibility of specifying for each symbolic references if their address is dynamic or static in the form of a **traccia**. Then the assembler will check all the **tracce** and if it is static it will keep it as it is, else it will add to the address a constant.
+
+# Handling subprograms insertion and subprograms call [[5](./0_reference.md)]
+The mechanism for insertion and call of a subprogram is entirely automatic in the CEP and is handled by translators, assemblers and pseudoinstructions. 
+
+The memory location provided to a subprogram starts by pointing to its group $HO$ of *celle parametriche*. The assembler will then store in the special parametric cell $0$ a jump to the first instruction of the subprogram.
+
+During a subprogram call the pseudoinstruction *Ricerca origine del sottoprogramma* is executed, which checks the associated entry in the *lista di trasferimento*, followed by a sequence of pseudoinstructions *Carica argomento* which have as arguments the addresses of the parameters to pass the subprogram. Finally the pseudoinstruction *Esecuzione*w hich will update the address for the $HO$ group and apply the jump instruction. The pseudoinstruction additionally will store in specific parametric cell the start address for the group $HO$ of the caller and its address in memory. These information will be used by the pseudoinstruction *Rientro* for the automatic restore of the caller.

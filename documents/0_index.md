@@ -36,11 +36,13 @@ Style guide:
 ## 5 - Main Memory
 - [Main Memory](./5_memory.md)
 
-## 6 - External devices
-- [External Devices](./5_external_devices.md)
+## 6 - Programmazione generale
 
-## 7 - Fortran Compiler
-- [Fortran Compiler](./6_fortran_compiler.md)
+- [Sistema di Programmazione Generale della CEP](./6_spgc.md)
+- [Subprograms organization](./6_subprograms_organization.md)
+
+## 7 - External devices
+- [External Devices](./5_external_devices.md)
 
 ## Additional Resources
 - [Glossary](./0_glossary.md) 

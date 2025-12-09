@@ -14,3 +14,5 @@ Style guide:
 3. A. Caracciolo di Forino, [Il progetto logico della calcolatrice elettronic della Università di Pisa e la programmazione](http://pumax.isti.cnr.it/remote/linkdoccsce.php?authority=cnr.isti&collection=cnr.csce&idcode=1963-B0-008&langver=it), Automazione e Strumentazione N. 7, 1963.
 
 4. A. Caracciolo di Forino, [Il sistema di programmazione generale della calcolatrice elettronic della Università di Pisa](http://pumax.isti.cnr.it/remote/linkdoccsce.php?authority=cnr.isti&collection=cnr.csce&idcode=1963-B0-009&langver=it), Automazione e Strumentazione N. 7, 1963.
+
+5. A. Caracciolo di Forino, Dott. M. Mercatanti, Dott. A. Andronico, Dott. I. Galligani, [Struttura generale e chiamata dei sottoprogrammi per la calcolatrice elettronica della Università di Pisa](http://pumax.isti.cnr.it/remote/linkdoccsce.php?authority=cnr.isti&collection=cnr.csce&idcode=1963-B0-010&langver=it), Automazione e Strumentazione N. 8, 1963.

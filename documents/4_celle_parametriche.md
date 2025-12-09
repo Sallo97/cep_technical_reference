@@ -12,6 +12,6 @@ During CEP's development one of the main proposal was to extend the concept of a
 
 The machine has in total 64 *celle parametriche*, numbered from 0 to 63. The registers are divided into two groups of 31 consecute registers plus a special cell, called $HO$ and $HU$. 
 
-$HO$ contains the *celle parametriche* used from the main program in execution, plus the special *cella parametrica* $0$, which always contains the constant $0$.
+$HO$ contains the *celle parametriche* used from the main program in execution, plus the special *cella parametrica* $0$, which always contains the constant $0$. Each program refers to a distinct $HO$ group, starting at possibly a different origin address[[5](./0_reference.md)].
 
 $HU$ contains *celle parametriche* used for the system's organization and some in common between the sub-programs. Additionaly it contains the special *cella parametrica* $63$ which contains the instruction counter. 
