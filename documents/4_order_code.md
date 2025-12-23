@@ -3,7 +3,7 @@ The CEP uses for all of its operations a 1+1 address scheme, meaning that the Or
 - exactly one explicit operand.
 - one implicit operand.
 
-There are in total 128 normal instructions [[4](./0_reference.md)].  
+There are in total 128 normal instructions [[4](./0_reference.md)] and 219 pseudo-instructions ([6](./0_reference.md)).  
 For each instruction there two additional implicit 15-bit addresses, each stored in a distinct reserved region of main memory [[2](./0_reference.md)].
 
 Finally these is an implicit return location.

@@ -16,3 +16,5 @@ Style guide:
 4. A. Caracciolo di Forino, [Il sistema di programmazione generale della calcolatrice elettronic della Università di Pisa](http://pumax.isti.cnr.it/remote/linkdoccsce.php?authority=cnr.isti&collection=cnr.csce&idcode=1963-B0-009&langver=it), Automazione e Strumentazione N. 7, 1963.
 
 5. A. Caracciolo di Forino, Dott. M. Mercatanti, Dott. A. Andronico, Dott. I. Galligani, [Struttura generale e chiamata dei sottoprogrammi per la calcolatrice elettronica della Università di Pisa](http://pumax.isti.cnr.it/remote/linkdoccsce.php?authority=cnr.isti&collection=cnr.csce&idcode=1963-B0-010&langver=it), Automazione e Strumentazione N. 8, 1963.
+
+6. O.G. [Mancino, FoRTRAN CEP language a FORTRAN II version of the C.E.P.](http://pumax.isti.cnr.it/remote/linkdoccsce.php?authority=cnr.isti&collection=cnr.csce&idcode=1963-IS-003&langver=it), 1963. 

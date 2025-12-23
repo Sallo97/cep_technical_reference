@@ -132,6 +132,12 @@ Style guide:
 
 ---
 
+- **Mode**: explicitly specifies the type of the argument.
+
+    It is the modern day equivalent of a type specifier in a statement.
+
+---
+
 - **Order Code**: the set of all possible instructions (considering also their *binary representation*) that the computer can execute. 
 
     In modern day terms it corresponds to the **Instruction Set** (also called sometimes the **Instruction Code**).
@@ -167,6 +173,14 @@ Style guide:
 - **Stored program computers**: machines which followed the Von Neumann's theoretical architecture by storing both program's code and local data onto the main memory.
 
     Still today modern computers follow this principle.
+
+---
+
+- **Subscript**: the dimension indices for accessing a certain element in a matrix.
+
+---
+
+- **Subscripted value**: a value contained inside a matrix.
 
 ---
 

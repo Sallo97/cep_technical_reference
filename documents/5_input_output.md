@@ -1,0 +1,2 @@
+# Input Output
+The input is performed by three photo-electric paper tape readers, and the output is realized by one online typewriter, three paper tape high-speed punches and one online printer. In addition the CEP has one offline printer [[6](./0_reference.md)].

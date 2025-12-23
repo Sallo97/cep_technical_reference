@@ -32,6 +32,7 @@ Style guide:
 - [Micro-instructions](./4_microinstructions.md)
 - [Pseudoistruzioni](./4_pseudoistruzioni.md)
 - [Automated checks](./4_automated_checks.md)
+- [Arithmetic operations](./4_arithmetic_operations.md)
 
 ## 5 - Main Memory
 - [Main Memory](./5_memory.md)
@@ -40,9 +41,11 @@ Style guide:
 
 - [Sistema di Programmazione Generale della CEP](./6_spgc.md)
 - [Subprograms organization](./6_subprograms_organization.md)
+- [Fortran CEP](./6_fortran_cep.md)
 
 ## 7 - External devices
 - [External Devices](./5_external_devices.md)
+- [I/O](./5_input_output.md)
 
 ## Additional Resources
 - [Glossary](./0_glossary.md) 
