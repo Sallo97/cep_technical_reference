@@ -1,6 +1,8 @@
 # CEP
 The CEP is parallel binary computer with 36-bit word length[[6](./0_reference.md)].
 
+It's architecture has strong similarity to the MUSE computer developed at the University of Manchester, even though both machine have been constructed independently from one another [[7](./0_reference.md)]. 
+
 # General kernel information
 With kernel we indentify the core of the CEP's architecture.
 The main kernel of the CEP is divided in three main components (showed as enclosing rectangles in the image below): the memory, the *Unità di Calcolo*, and the *Unità degli Indirizzi*.

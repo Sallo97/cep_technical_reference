@@ -18,3 +18,5 @@ Style guide:
 5. A. Caracciolo di Forino, Dott. M. Mercatanti, Dott. A. Andronico, Dott. I. Galligani, [Struttura generale e chiamata dei sottoprogrammi per la calcolatrice elettronica della Università di Pisa](http://pumax.isti.cnr.it/remote/linkdoccsce.php?authority=cnr.isti&collection=cnr.csce&idcode=1963-B0-010&langver=it), Automazione e Strumentazione N. 8, 1963.
 
 6. O.G. [Mancino, FoRTRAN CEP language a FORTRAN II version of the C.E.P.](http://pumax.isti.cnr.it/remote/linkdoccsce.php?authority=cnr.isti&collection=cnr.csce&idcode=1963-IS-003&langver=it), 1963. 
+
+7. L. Alfieri, A. Andronico, C. Anzaldi, L. Calamia Barsanti, A. Caracciolo di Forino, I. Galligani, A. Laratta, O. Mancino, G. Mengali, M. Mercatanti, L. Spanedda, N. Wolkenstein, [Contributo al VI° Convegno - Mostra dell'Automazione e Strumentazione](http://pumax.isti.cnr.it/remote/linkdoccsce.php?authority=cnr.isti&collection=cnr.csce&idcode=1964-IS-001&langver=it), 1964.
