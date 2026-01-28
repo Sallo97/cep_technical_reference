@@ -13,7 +13,7 @@ All instructions occupy 36-bits and are subdivided (from left-to-right) into:
 
 <!-- I'm not sure if parametric addresses strictly refer to addresses referring to celle parametriche. I though so at the beginning, but the distinction between instructions, specifying that special instructions are used for working with celle parametriche has made me dubious -->
 
-- operand address (15-bits).
+- operation address (15-bits).
 
 <!-- still not sure what the 15-bits address contains -->
 

@@ -42,9 +42,14 @@ Style guide:
 - [Fortran CEP](./6_Programmazione_generale/6_fortran_cep.md)
 - [Assemblatore CEP](./6_Programmazione_generale/6_assemblatore_cep.md)
 
+- [Linguaggio Programmativo Simbolico CEP](./6_Programmazione_generale/6_linguaggio_simbolico.md)
+
+- [Traduttore Simbolico Binario CEP](./6_Programmazione_generale/6_traduttore_simbolico.md)
+
 ## 7 - External devices
 - [External Devices](./7_External_devices/7_external_devices.md)
 - [I/O](./7_External_devices/7_input_output.md)
+- [Sistema programmativo di entrata e di uscita dei dati per la CEP](./7_External_devices/7_io_program.md)
 
 ## 8 - Miscellaneous
 - [Speed](./8_Miscellaneous/8_speed.md)

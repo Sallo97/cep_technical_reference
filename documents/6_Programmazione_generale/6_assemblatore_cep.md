@@ -55,9 +55,9 @@ When reserving memory to each subprogram, the assembler will set the start of th
 
 1. The ASSGC starts by reading the "schema di asssemblamento" and all other information in the control panel, determining if the produced result must be loaded directly into memory or printend into a binary punched tape.
 
-2. The assembler asks throught the teleprompter the names of the subprograms to assemble in the order in which the must be loaded. Here we must specify also the name of used pseudoistruzioni.
+2. The assembler asks throught the teleprinter the names of the subprograms to assemble in the order in which the must be loaded. Here we must specify also the name of used pseudoistruzioni.
 
-3. At the end of execution, the Assemble will print over the teleprompter all the determined memory locations.
+3. At the end of execution, the Assemble will print over the teleprinter all the determined memory locations.
 
 ### Error Handling
 If we introduce a different tape than the one requested, the Assembler will notice it and request to insert the correct one.

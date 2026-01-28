@@ -46,4 +46,51 @@ In practice, since in the CEP design it is not possible to define fixed location
 
 This causes an overlap between the jump table, $HU$ (composed of 31-consecutive cells), and the special cella parametrica $63$, meaning the first 31 + 1 cells cannot be used by the table. The actual number of entries in the jump table is reduced to $256 - 32 = 224$.
 
+Those $224$ consider also the five routines associated to the control-bit. [[7](../0_Additional_resources/0_reference.md)]
+
 Note that the jump table declares the pseudoinstructions mapping available at the current moment in main memory. This means we can have potentially infinite pseudoistruzioni stored among auxiliary memories. To use them we need to load their content into main memory and dedicate them an entry in the jump table.
+
+# Types of pseudoistruzioni [[7](../0_Additional_resources/0_reference.md)]
+Pseudoistruzioni are used for implementing useful features throught the CEP's libraries. 
+
+We distinguish the library-defined pseudoistruzioni in two fields:
+
+- **Arithmetic**, offering complex arithmetic operations not available as normal instructions, or for handling numbers in base different than binary.
+
+    Some of them are:
+
+    - root operations.
+    
+    - exponential operations.
+    
+    - conversion operations from binary to decimal and viceversa.
+    
+    - arbitrary-precision arithmetic operations.
+
+- **Logic**, are responsible to manage the program's execution. They have been mainly used by translators and the assembler.
+
+    Some of them are:
+    
+    - operations for operating over single bits, or group of bits, or over variable-length words.
+
+    - for handling the prolog and epilogue of calls to subprograms.
+
+    - a unique pseudoinstruction for defining special pseudoinstruction, by interpreting the address of another pseudoinstruction.
+
+## Groups of pseudoistruzioni [[7](../0_Additional_resources/0_reference.md)]
+Since we can create an infinite number of pseudoistruzioni, it is not possible to have a fixed identifier for each of them. 
+
+To overcome this problem we subdivide pseudoistruzioni into groups according to how probable is to use them together. Each group has $32$ entries. Each program can use pseudoistruzioni coming from at most seven different groups. 
+
+These groups do not take into account pseudoistruzioni being explicitly merged with the program's code during the assembly phase.
+
+If a pseudoistruzione share a good part of its code with other members of its group, they can be aggregated in a "block". Think of a block as a subprogram with different entry points. 
+
+The Linguaggio Programmativo Simbolico CEP (LPSC) during compilation will assign a distinct binary code to each pseudoistruzione. The identifier is determined by attaching the group number of the pseudoistruzione (between $1$ and $7$) and its numbered entry within (between $0$ and $31$).
+
+An additional recodification of the codes is applied by the assembler to handle possible differences in the ordering of the groups in the subprograms.
+
+# Compilatore dei nastri di gruppo delle pseudoistruzioni (CONGBX) [[7](../0_Additional_resources/0_reference.md)]
+During the assembly phase we need to load the routines used by the pseudoistruzioni in the program. The process of translating to binary the requested routines is handled by the Compilatore dei nastri di Gruppo delle Pseudoistruzioni (CONGBX for short).
+
+For each group CONGBX retrieves the associated routines, translates them into binary and mount them over a magnetic tape.
