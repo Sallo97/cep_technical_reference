@@ -46,6 +46,10 @@ Style guide:
 
 - [Traduttore Simbolico Binario CEP](./6_Programmazione_generale/6_traduttore_simbolico.md)
 
+- [Traduttore Fortran CEP](./6_Programmazione_generale/6_traduttore_fortran_cep.md)
+
+- [Error checking](./6_Programmazione_generale/6_error_checking.md)
+
 ## 7 - External devices
 - [External Devices](./7_External_devices/7_external_devices.md)
 - [I/O](./7_External_devices/7_input_output.md)
@@ -53,6 +57,7 @@ Style guide:
 
 ## 8 - Miscellaneous
 - [Speed](./8_Miscellaneous/8_speed.md)
+- [CEP's Emulator for the FINAC](./8_Miscellaneous/8_cep_emulator.md)
 
 ## Additional Resources
 - [Glossary](./0_Additional_resources/0_glossary.md) 

@@ -55,7 +55,7 @@ The programming languages handled by the CEP *(as of 1963)* are:
 
 - **Linguaggio Programmativo Fortran CEP (LPFC)**. 
 
-    An extended version of the LPFO, allowing the defition in **LPFC** of arithmetic expressions containing arithmetic variables of any kind. 
+    LPFC at its core is an extension of LPFO, allowing in the defition of an arithmetic expressions to have numeric variables in any format, being all interpreted as single precision floating point numbers. There are also some syntactic differences added, for helping the translation process parse propositions more easily. 
 
     Both **LPFC** and **LPFO** are the highest level language available in the CEP *(as of 1963)* and were used for defining scientific programs.
 
