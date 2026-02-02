@@ -3,6 +3,12 @@ The CEP is parallel binary computer with 36-bit word length[[6](./0_reference.md
 
 It's architecture has strong similarity to the MUSE computer developed at the University of Manchester, even though both machine have been constructed independently from one another [[7](./0_reference.md)]. 
 
+The main magnetic core memory has 8192 words; the auxiliary memory is composed of a magnetic drum with 15.384 words and 8 magnetic tape units. [[8](../0_Additional_resources/0_reference.md)]
+
+Each instructions occupies a full word, with a single address doubly modifiable by means of memory cells, called **parametric cells**. [[8](../0_Additional_resources/0_reference.md)]
+
+There are $128$ instructions and $219$ **pseudo-instructions** which refer to arbitrary closed subroutines. Input programs are loaded as paper table, while the output can be generated through a typewriter or paper tape or a printer. [[8](../0_Additional_resources/0_reference.md)]
+
 # General kernel information
 With kernel we indentify the core of the CEP's architecture.
 The main kernel of the CEP is divided in three main components (showed as enclosing rectangles in the image below): the memory, the *Unità di Calcolo*, and the *Unità degli Indirizzi*.

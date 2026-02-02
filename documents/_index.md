@@ -14,7 +14,7 @@ Style guide:
 ## 1 - Main Control Unit
 - [Wilkes' Architecture](./1_Main_control_unit/1_wilkes_architecture.md)
 - [Micro-programming Control Unit](./1_Main_control_unit/1_micro-programming_control_unit.md)
-- [Kernel](./1_Main_control_unit/1_kernel.md)
+- [CEP Overview](./1_Main_control_unit/1_kernel.md)
 - [Sending and Receving Data](./1_Main_control_unit/1_sending_receiving_data.md)
 
 ## 2 - Timing System
