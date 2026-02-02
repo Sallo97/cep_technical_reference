@@ -1,8 +1,8 @@
 # FINAC
 The FINAC was a computer manufactured by the British firm Ferranti Ltd. and acquired by the CNR (National Research Council) in Rome in 1955. It was the fourth produce model of the Ferranti "Mark I*" series, one of the first completely electronical computers.
 
-# CEP Emulator for the FINAC
-During CEP's development, an emulator was created for the FINAC, in order to test its base programs well before the computer was fully operational.
+# CEP Emulator for the FINAC [[7](../0_Additional_resources/0_reference.md)]
+During CEP's development, an emulator was created for the FINAC, in order to test its base programs before the computer was fully operational.
 
 The emulator was able to execute $7$ instructions per second. In general the FINAC was a lot slower compared to the CEP. Still, the emulator was used even after the CEP's completion, for testing simple program which had long execution time.
 
@@ -14,6 +14,8 @@ Despite both being binary systems, the architectures of the FINAC and the CEP we
 instructions dedicate $36$-bits for both the instruction and for numbers. Instead, the FINAC dedicates $20$-bits for the instruction and $40$-bits for numbers.
 
     In the FINAC each instruction is divided in four groups of $5$ bits each; each single precision number is stored in either $40$-bits or $60$-bits, depending if they are fixed point of floating point.
+
+    It is important to note that single-precision floating-point arithmetic is not implemented at the hardware level. Instead, the FINAC relies on a specialized suite of subprograms to manage both the internal representation of numbers and the execution of all related operations.
 
     Each CEP word was mapped to a single FINAC number, having the first bit duplicated in the second position and the last three bits set to $0$. The instruction is decompose in groups of respectively $10, 6, 6, 18$ bits.
 
