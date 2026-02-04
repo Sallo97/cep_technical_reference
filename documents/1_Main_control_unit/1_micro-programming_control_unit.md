@@ -1,81 +1,97 @@
 # Micro-programming Control Unit (MCU) 
-The main control unit of the Calcolatrice Elettronica Pisana is the most important component of the architecture, responsible for the execution of instruction. The processor follows Wilkes' micro-programming principle and thus is also called a **micro-programming control unit**. 
+The main control unit of the Calcolatrice Elettronica Pisana is the most important component of the architecture, responsible for the execution of **micro-instructions**. Following the principles enstablished by Wilkes, The CEP utilizes a **Micro-programming Control Unit** (MCU), in which instructions are implemented as a sequences of lower-level micro-instructions. 
 
-In the lowest level, the CEP operates completely in binary. To handle the conversion several auxiliary programs are define at the high level [[4](./0_reference.md)].
+Each micro-instruction serves two purposes:
 
-## EXAMPLE
-``` 
-consider the instruction ADD_A B, which states the addition between location `B` and `A`. 
+1. Determine which *"gates"* to open and close in the CPU, instrumenting data through the processor to perform a specific micro-operation.
 
-This instruction has:
-- one explicit operand, `B`
-- one implicit operand, `A`
-```
+1. Providing the address of the next micro-instruction to execute.
 
-![image](../resources/cep_maincontrolunit.svg)
+### Example
 
-# Components
+Recall that the CEP is a 1-address machine, i.e. the user can specify the address for only **one** operand. 
+
+Consider a simple **ADD** instruction involving an explicit integer constant (provided by the user as an address in memory) and an implicit value in a register (usually the **Accumulator**).
+
+First the machine needs to retrieve the instruction and initialize its micro-program (i.e. the sequence of micro-instructions implementing it).
+This is executed by the **Fetch Phase**, which in the micro-programming control unit is a micro-program itself. The phase also copies the integer constant from main memory into the **Memory Buffer Register**.
+
+Retrieved the micro-program, the computer passed to the **Execution Phase**, which consists in executing it. Today doing a simple addition seems trivial, but it still can be broken down into elementary steps:
+
+1. Opening the path to move the constant from the Memory Buffer Register to the ALU input.
+
+1. Signaling the ALU to perform the addition with the value already held in the Accumulator.
+
+1. Branching the micro-sequence back to Fetch Phase micro-program to retrieve the next machine-level command.
+
+## Determining the next micro-instruction
+As we have said, a micro-instruction is responsible for both executing an elementary step of a high-level machine-instruction and determing the next micro-instruction to execute.
+
+Below we provide a schematic of the MCU, focussed on this particular problem:
+
+![image](../../resources/cep_maincontrolunit.svg)
 
 ## Register 0
-The register 0 is what can now be referred as the **program counter** : it stores the address of the next **macro-instruction**.
+Register 0 contains the address of the next **micro-instruction** to execute. 
 
 ## Micro-instruction matrices
-For each micro-instruction, the MCU determines two possible next micro-instructions: the **unconditional address** $\mu_1$, which by default is the one picked; and a **conditional address** $\mu_2$, which is selected only when a given condition is valid.
+The MCU can be abstracted as a set of smaller matrices, each having a particular role in the determination of the next micro-instruction:
 
-The production of these micro-instructions is delegated to two matrices: $I$ for $\mu_1$ and $II$ for $\mu_2$.
+- **Matrix I:** its horizontal lines determine the **unconditional address instruction** $\mu_1$, the default one to pick.
 
-The choice for the next micro-instruction is decided by the circuit $K_0$.
+- **Matrix II:** its horizontal lines determine the **conditional address** $\mu_2$, selected only when a given condition is valid.
 
-## Branching Circuit $K_0$
-A parallel AND-OR switching circuit whose output decides which micro-instruction to execute in the next cycle between:
+The vertical lines of both matrices will determine the control signals used to decide the next address among the possible choices.
 
-- the conditional address $\mu_1$. 
-- the unconditional address $\mu_2$.  
-- $m$, an address coming form the Main Memory $M$.
-- the fixed special address $\epsilon_0$ = 111 $\ldots$ 1, which is the address of the last micro-order.
-<!-- ⚠️⚠️⚠️
-    I'm not sure it if is the last micro-order of the current micro-program, or a special micro-order which is the last in the Order Code which forces program termination.
--->
+## Control circuits $K_1$, $K_2$ and $K_3$
+Three Parallel AND-OR switching circuits will instrument the control signals responsible in determing which address will be picked for the next micro-instruction.
+
+$K_1$ will decide which address should be picked between $\mu_1$ and $\mu_2$.
+
+$K_2$ decides if the special address $\epsilon_0$ should be picked.
+
+![image](../../resources/k2_circuit.svg)
+
+$K_3$ implements the special behaviour for **repeating the previous micro-intructions**. When set, the output produced by $K_0$ is discarded and and the program counter keeps the previous address, indicated as $\mu_0$. 
+
+$K_1$ and $K_3$ share the same structure:
+
+![image](../../resources/k1_k3_circuit.svg)
+
+
+## Branching circuit $K_0$
+The next micro-instruction is decided by the parallel AND-OR switching circuit $K_0$ between:
+
+- the **unconditional address** $\mu_1$. 
+
+- the **conditional address** $\mu_2$.  
+
+- the **termination address** $\epsilon_0$ = 111 $\ldots$ 1, which is always the last step of every micro-program. This fix location points to the start of the Fetch Phase micro-program.
+
+- the **previous address** $\mu_0$, indicating that the computer must execute the same operation.
+
+- the **starting address** $m$, pointing to the first micro-instruction of the macro-program associated to the current instruction to execute. This address is setted at the end of the Fetch Phase to **move into the Execution Phase**.
  
-It receives as input the content of: the matrices $I$ ($\mu_1$) and $II$ ($\mu_2$), the circuits $K_1$ ($k_1$) and $K_2$ ($k_2$), and the control-signal $c_1$. 
+The decision is determined by the control signals $k_1$, $k_2$, and $c_1$ according to the following rules:
 
-## Rules of $K_0$
+- if $k_1$ = 0  $\land$ $c_1$ = 0 $\rightarrow$ $\mu_1$ 
 
-- if $k_1$ = 0 $\land$ $k_2$ = 0 $\land$ $c_1$ = 0 $\rightarrow$ $\mu_1$ 
-- if $k_1$ = 1 $\land$ $k_2$ = 0 $\land$ $c_1$ = 0 $\rightarrow$ $\mu_2$
-- if $k_1$ = 0 $\land$ $k_2$ = 0 $\land$ $c_1$ = 1 $\rightarrow$ $m$
-- if $k_1 = 0/1$ $\lor$ $k_2$ = 1 $\lor$ $c_1$ = 0/1 $\rightarrow$ the fixed address $\epsilon_0$ = 111 $\ldots$ 1
+- if $k_1$ = 1 $\land$ $c_1$ = 0 $\rightarrow$ $\mu_2$
 
-## Helper Circuits $K_1$, $K_2$ and $K_3$
-the three circuits are two input AND gates whose outputs are used to determine the next micro-instruction. $K_1$ and $K_2$ are provide their output directly to $K_0$, which uses them to select a new operation for the next cycle. 
+- if $k_1$ = 0 $\land$ $c_1$ = 1 $\rightarrow$ $m$
 
-$K_1$ is responsible to determine which address to choose between $\mu_1$ and $\mu_2$.
+- if $k_2$ = 1 $\rightarrow$ $\epsilon_0$ 
 
-$K_2$ determines to retrieve the special address $\epsilon_0$.
+- if $k_3$ = 1 $\rightarrow$ $\mu_0$
 
-$K_3$ implements a special behaviour for handling **repeating micro-intructions**. When set the output produced by $K_0$ is discarded and and the program counter keeps the same instruction, indicated as $\mu_0$. 
+**NOTE:** In some documents the control signals $k_1, k_2, k_3$ are also referred as $m_1, m_2, m_3$.
 
-## Next micro-instruction priority
-The current micro-order is determined by the current control-signals being activated by the diode-matrix in the architecture. We say the control signals $m_1$, $m_2$ and $m_3$ refers respectively to those produced by $K_1$, $K_2$ and $K_3$
-
-| Addresses     |   Addresses   |   Addresses | Conditional Control Signals|
-| ------------- | ------------- | ------------- | ------------- |
-| $\mu_1$                  |  $\epsilon_0$      |              |none |
-| $\mu_1 \mu_2$            | $\mu_1 \epsilon_0$ |$\mu_1 \mu_0$ |one  |
-| $\mu_1 \mu_2 \epsilon_0$| $\mu_1 \mu_2 \mu_0$ |              |two  |
-| $\mu_1 \mu_2 \epsilon_0 \mu_0$|               |              |three| 
-
-The first group refers to micro-order addresses selected by unconditional control signals.
-
-The second, third and fourth group refers to micro-order which deliver one, two and three conditional control signals respectively.
-
-The priority of the next address is:
+If multiple addresses are eligible, the following priority hierarchy decides the one selected, form less important, to more important:
 
 $\mu_1 \prec \mu_2 \prec \epsilon_0 \prec \mu_0$ 
 
-For example, if the control-signals set to true addresses $\mu_2, \epsilon_0, \mu_0$, among them $\mu_0$ is selected.
+For example, if the considitions for $\mu_2, \epsilon_0, \mu_0$, are all valid, among them $\mu_0$ is **always** selected.
 
-## Communication with the kernel
-The micro-programming control unit communicates to handle the execution with the main kernel of the CEP (main memory, *Unità di Calcolo*, *Unità degli Indirizzi*). This is done with both asynchronous and synchornous signals, depending on the type of communication.
+A possible diagram of the $K_0$ is the following:
 
-In general we denote with $\psi$ sent *synchronously*; with $\epsilon$ signals sent *asynchronously*.
+![image](../../resources/k0_circuit.png)
