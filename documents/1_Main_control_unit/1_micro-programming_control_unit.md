@@ -58,6 +58,7 @@ $K_1$ and $K_3$ share the same structure:
 
 ![image](../../resources/k1_k3_circuit.svg)
 
+**NOTE:** In the diagram of all circuits there could be more than two vertical conditions.
 
 ## Branching circuit $K_0$
 The next micro-instruction is decided by the parallel AND-OR switching circuit $K_0$ between:
