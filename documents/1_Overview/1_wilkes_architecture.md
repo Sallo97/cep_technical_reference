@@ -3,7 +3,7 @@ The stored program architecture follows to the main principle of the Von Neumann
 
 In other terms, the program's code and its local variable must be stored both in memory.
 
-![image](../resources/stored_program_architecture.svg)
+![image](../../resources/stored_program_architecture.svg)
 
 # The EDSAC Computer
 Let us consider the EDSAC, which was build by Maurice Wilkes. On the experience in developing this computer and seeing similar architecture after, Wilkes will later introduce the foundamental concept of *micro-programming*.
@@ -24,7 +24,7 @@ It is responsible for decoding a given macro-order into the associated micro-pro
 
 The concrete implementation for transforming the input to the associated control signals can be represented as a regular circuit called the **diode matrix**. 
 
-![image](../resources/order_interpreter.svg)
+![image](../../resources/order_interpreter.svg)
 
 ## Control Signals
 In the EDSAC there are several control signals scattered across the machine and its **order interpreter**.
@@ -55,7 +55,7 @@ The Arithmetic Unit in the EDSAC was serial. Wilkes however found out by visitin
 <!-- TODO:
         substitute the edsac_architecture image with a svg drawn by me.
  -->
-![image](../resources/edsac_architecture.png)
+![image](../../resources/edsac_architecture.png)
 
 # Micro-programming
 Looking at the structure of the memory unit in the EDSAC, which was basically a sequence of memory word, Wilkes realized that the Main Control Unit (MCU, basically the mai processor) can be interpreted analoguously as a sequence of micro-instructions. These micro-instruction can be composed to make a complete instruction of the MCU.
@@ -113,4 +113,4 @@ Consider for example the execution of a conditional jump instruction, whose resu
 
 Thus in the control store a flag bit is present at row $n-1$, which is used by matrix B to determine which micro-instruction to provide as output.
 
-![image](../resources/wilkes_architecture.svg)
+![image](../../resources/wilkes_architecture.svg)

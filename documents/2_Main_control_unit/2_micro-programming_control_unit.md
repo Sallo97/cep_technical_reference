@@ -96,3 +96,5 @@ For example, if the considitions for $\mu_2, \epsilon_0, \mu_0$, are all valid, 
 A possible diagram of the $K_0$ is the following:
 
 ![image](../../resources/k0_circuit.png)
+
+## Sequential implementation of registers

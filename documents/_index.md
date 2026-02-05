@@ -11,16 +11,22 @@ Style guide:
 
 # Index
 
-## 1 - Main Control Unit
-- [Wilkes' Architecture](./1_Main_control_unit/1_wilkes_architecture.md)
-- [Micro-programming Control Unit](./1_Main_control_unit/1_micro-programming_control_unit.md)
+## 1 - Overview
 - [CEP Overview](./1_Main_control_unit/1_kernel.md)
-- [Sending and Receving Data](./1_Main_control_unit/1_sending_receiving_data.md)
 
-## 2 - Timing System
+- [Wilkes' Architecture](./1_Main_control_unit/1_wilkes_architecture.md)
+
 - [Synchronous and asynchronous machines](./2_Timing_system/2_synchronous_asynchronous.md)
+
+
+## 2 - Main Control Unit
+- [Micro-programming Control Unit](./2_Main_control_unit/1_micro-programming_control_unit.md)
+
 - [Timing System](./2_Timing_system/2_timing_system.md)
+
 - [Controllo Dinamico](./2_Timing_system/2_controllo_dinamico.md)
+
+- [Sending and Receving Data](./2_Main_control_unit/1_sending_receiving_data.md)
 
 ## 3 - Unità di Calcolo
 - [Unità di Calcolo](./3_Unità_di_calcolo/3_unità_di_calcolo.md)
