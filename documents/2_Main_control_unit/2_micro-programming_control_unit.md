@@ -31,10 +31,16 @@ Below we provide a schematic of the MCU, focussed on this particular problem:
 
 ![image](../../resources/cep_maincontrolunit.svg)
 
-## Register 0
-Register 0 contains the address of the next **micro-instruction** to execute. 
+## Register $0$
+Register $0$ contains the address of the next **micro-instruction** to execute. 
 
-## Micro-instruction matrices
+## The Decoder $DC$
+Receives as input the **micro-instruction** from register $0$ which transforms as the associated **micro-operation**, i.e. the set of control signals concretely implementing the request.
+
+## The Matrix $MC$
+The Matrix $MC$ distributes the control signals representing the micro-operation across the architecture. 
+
+### Micro-instruction matrices
 The MCU can be abstracted as a set of smaller matrices, each having a particular role in the determination of the next micro-instruction:
 
 - **Matrix I:** its horizontal lines determine the **unconditional address instruction** $\mu_1$, the default one to pick.
@@ -43,7 +49,7 @@ The MCU can be abstracted as a set of smaller matrices, each having a particular
 
 The vertical lines of both matrices will determine the control signals used to decide the next address among the possible choices.
 
-## Control circuits $K_1$, $K_2$ and $K_3$
+### Control circuits $K_1$, $K_2$ and $K_3$
 Three Parallel AND-OR switching circuits will instrument the control signals responsible in determing which address will be picked for the next micro-instruction.
 
 $K_1$ will decide which address should be picked between $\mu_1$ and $\mu_2$.
@@ -60,7 +66,7 @@ $K_1$ and $K_3$ share the same structure:
 
 **NOTE:** In the diagram of all circuits there could be more than two vertical conditions.
 
-## Branching circuit $K_0$
+### Branching circuit $K_0$
 The next micro-instruction is decided by the parallel AND-OR switching circuit $K_0$ between:
 
 - the **unconditional address** $\mu_1$. 
@@ -97,4 +103,3 @@ A possible diagram of the $K_0$ is the following:
 
 ![image](../../resources/k0_circuit.png)
 
-## Sequential implementation of registers

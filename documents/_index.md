@@ -22,7 +22,9 @@ Style guide:
 ## 2 - Main Control Unit
 - [Micro-programming Control Unit](./2_Main_control_unit/1_micro-programming_control_unit.md)
 
-- [Timing System](./2_Timing_system/2_timing_system.md)
+- [Timing System](./2_Main_control_unit/2_timing_system.md)
+
+- [Control Signals](./2_Main_control_unit/2_control_signals.md)
 
 - [Controllo Dinamico](./2_Timing_system/2_controllo_dinamico.md)
 

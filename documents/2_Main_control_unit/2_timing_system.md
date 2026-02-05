@@ -65,7 +65,10 @@ In the Timing System there are two sets of control signals:
 
 $D_0$ ensures that signals in $x_{c1}$ are stabilized.
 
-A conditional control signal is a **signal whose activation depends on the machine's current state or some status flag**. $x_{c_1}$ and $x_{c_2}$ are conditional. By conditioning both signals at the same time it is possible, as in the case of repetitive micro-orders, to block the pulses at register $O$ at the end of the first micro-operation and to decrease (because the control unit is not operating at the moment) the cycle time in the successive micro-operation.
+<!--
+For know is commented because I'm not sure of its content.
+
+ A conditional control signal is a **signal whose activation depends on the machine's current state or some status flag**. $x_{c_1}$ and $x_{c_2}$ are conditional. By conditioning both signals at the same time it is possible, as in the case of repetitive micro-orders, to block the pulses at register $O$ at the end of the first micro-operation and to decrease (because the control unit is not operating at the moment) the cycle time in the successive micro-operation. -->
 
 
 ## Temporal classes of the CEP
