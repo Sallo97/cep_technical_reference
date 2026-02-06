@@ -1,4 +1,4 @@
-# Control Signals
+# Control Signals [[1](../0_Additional_resources/0_reference.md)]
 In a computer architecture a Control Signal is an electrical level (i.e. a steady voltage) that is sent to the **control input** of a logic gate or a registe. Its signal orchestrates in the component the movement and processing of data for:
 
 - **When the signal is 0 (False):** the gate is closed, stopping data from moving even if it is waiting on the input wires. 

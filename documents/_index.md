@@ -20,15 +20,15 @@ Style guide:
 
 
 ## 2 - Main Control Unit
-- [Micro-programming Control Unit](./2_Main_control_unit/1_micro-programming_control_unit.md)
+- [Micro-Order Selection](./2_Main_control_unit/2_micro-order_selection.md)
+
+- [Sequential Circuits](./2_Main_control_unit/2_sequential_circuits.md)
 
 - [Timing System](./2_Main_control_unit/2_timing_system.md)
 
 - [Control Signals](./2_Main_control_unit/2_control_signals.md)
 
-- [Controllo Dinamico](./2_Timing_system/2_controllo_dinamico.md)
-
-- [Sending and Receving Data](./2_Main_control_unit/1_sending_receiving_data.md)
+- [Interrupts](./2_Main_control_unit/2_interrupts.md)
 
 ## 3 - Unità di Calcolo
 - [Unità di Calcolo](./3_Unità_di_calcolo/3_unità_di_calcolo.md)

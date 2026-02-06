@@ -1,4 +1,4 @@
-# Micro-programming Control Unit (MCU) 
+# Micro-Order Selection
 The main control unit of the Calcolatrice Elettronica Pisana is the most important component of the architecture, responsible for the execution of **micro-instructions**. Following the principles enstablished by Wilkes, The CEP utilizes a **Micro-programming Control Unit** (MCU), in which instructions are implemented as a sequences of lower-level micro-instructions. 
 
 Each micro-instruction serves two purposes:
