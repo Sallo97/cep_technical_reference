@@ -1,11 +1,19 @@
 # Micro-Order Selection
-The main control unit of the Calcolatrice Elettronica Pisana is the most important component of the architecture, responsible for the execution of **micro-instructions**. Following the principles enstablished by Wilkes, The CEP utilizes a **Micro-programming Control Unit** (MCU), in which instructions are implemented as a sequences of lower-level micro-instructions. 
+The **Micro-programming Control Unit** (MCU) of the Calcolatrice Elettronica Pisana (CEP) is the most important component of the architecture, following the principles established by Wilke. In this design, high-level machine instructions, also indicated as **macro-instruction**, are concretely implemented in the architecture as a sequence of lower-level **micro-instruction**.
 
 Each micro-instruction serves two purposes:
 
-1. Determine which *"gates"* to open and close in the CPU, instrumenting data through the processor to perform a specific micro-operation.
+1. Determine which logical *"gates"* to open and close in the CPU, directing the flow of data through the processor to perform specific tasks.
 
-1. Providing the address of the next micro-instruction to execute.
+1. Providing the address of the next micro-instruction to execute, allowing for conditional branching and loops within the control logic.
+
+## Micro-Orders and Micro-Operations
+
+- **Micro-Orders**: the **functional components** of a micro-instruction, indentifying the physical **control signals (i.e. electrical pulses)** emitten by the MCU's diode matrices when executing it.
+
+- **Micro-Operations:** physical events in the hardware that occur when a micro-order is received.
+
+A micro-instruction is a collection of micro-orders that work together to trigger the necessary micro-operations within a single operative cycle.
 
 ### Example
 
