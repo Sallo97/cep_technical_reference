@@ -16,8 +16,9 @@ Style guide:
 
 - [Wilkes' Architecture](./1_Main_control_unit/1_wilkes_architecture.md)
 
-- [Synchronous and asynchronous machines](./2_Timing_system/2_synchronous_asynchronous.md)
+- [Synchronous and asynchronous machines](./1_Overview/1_synchronous_asynchronous.md)
 
+- [Ferrite Rod Storage Technique](./1_Overview/1_ferrite_rod.md)
 
 ## 2 - Main Control Unit
 - [Micro-Order Selection](./2_Main_control_unit/2_micro-order_selection.md)
@@ -29,6 +30,8 @@ Style guide:
 - [Control Signals](./2_Main_control_unit/2_control_signals.md)
 
 - [Interrupts](./2_Main_control_unit/2_interrupts.md)
+
+- [Final Schematic](./2_Main_control_unit/2_final_schematic.md)
 
 ## 3 - Unità di Calcolo
 - [Unità di Calcolo](./3_Unità_di_calcolo/3_unità_di_calcolo.md)

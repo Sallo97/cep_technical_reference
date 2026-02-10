@@ -81,7 +81,7 @@ The next micro-instruction is decided by the parallel AND-OR switching circuit $
 
 - the **conditional address** $\mu_2$.  
 
-- the **termination address** $\epsilon_0$ = 111 $\ldots$ 1, which is always the last step of every micro-program. This fix location points to the start of the Fetch Phase micro-program.
+- the **termination address** $\epsilon_0$ = 111 $\ldots$ 1, which is always the last step of every micro-program. It is the address of the micro-program $E_0$, pointing to the start of the Fetch Phase micro-program.
 
 - the **previous address** $\mu_0$, indicating that the computer must execute the same operation.
 
@@ -110,7 +110,7 @@ For example, if the considitions for $\mu_2, \epsilon_0, \mu_0$, are all valid, 
 A possible diagram of the $K_0$ is the following:
 
 ![image](../../resources/k0_circuit.png)
-
+ 
 # General Case
 A general scheme is also considered, where one of four addresses $\mu_1, \mu_2, \mu_3, \mu_4$ may occur at the end of a micro-operation, but contrary to the previous approach they can select any micro-order.
 
