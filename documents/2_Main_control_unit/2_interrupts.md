@@ -1,4 +1,4 @@
-# Input-Output Operations
+# Input-Output Operations [[1](../0_Additional_resources/0_reference.md)]
 The communication between the Central Processing Unit (CPU) and external peripherals is typically asynchronous, requiring significant coordination challenges: the CPU needs to synchronize its internal operations with external components that request services at unpredictable intervals.
 
 Each I/O device is assigned a **priority level**, i.e. a numerical rank, which determines an hierarchy of importance among the current operations and incoming incoming interruptions.

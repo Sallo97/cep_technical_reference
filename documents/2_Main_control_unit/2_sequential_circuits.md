@@ -1,7 +1,3 @@
-**IMPORTANT:** *as of now we are not sure if this circuit is actually a part of the CEP, it could be just a general example regarding how registers are implemented in the machine. Still I decided to add it, since it provides useful informations on how data is stored in registers.*
-
-*Update: from the control panel there are nominated registers $A,B,C$, so maybe they **do** exist.*
-
 # Combinatorial & Sequential Circuits A, B, C [[1](../0_Additional_resources/0_reference.md)]
 A **Combinatorial Circuit** is one in which the output depends only on the current input. **It has no memory**.
 

@@ -33,6 +33,8 @@ Style guide:
 
 - [Final Schematic](./2_Main_control_unit/2_final_schematic.md)
 
+- [Decimal Arithmetic Unit](./2_Main_control_unit/2_arithmetic_unit.md)
+
 ## 3 - Unità di Calcolo
 - [Unità di Calcolo](./3_Unità_di_calcolo/3_unità_di_calcolo.md)
 

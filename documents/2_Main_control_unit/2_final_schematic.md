@@ -1,14 +1,14 @@
-# General Architecture
+# General Architecture [[1](../0_Additional_resources/0_reference.md)]
 In typical computer architectures of the era, the cardinality of the control store (i.e. the number of supported micro-orders) usually held between $n = 2^{8}$ and $n = 2^{9}$, with the latter being the preferred choice. The ratio $k$ of low-level micro-orders to higher-level macro-orders (i.e. machine instructions) was rather large, ranging between $4 \leq k \leq 8$, indicating that serveral micro-steps were necessary to complete a single machine command.
 
 In comparison, the CEP was more efficient, utilizing a total of $n = 2^{8}$ micro-orders and a ratio of only $k = 2$. This makes the computer a highly dense micro-programming scheme were each micro-step performed multiple parallel operations.
 
-# CEP Execution and Signaling
+# CEP Execution and Signaling [[1](../0_Additional_resources/0_reference.md)]
 A defining feature of the CEP's execution cycle is that **the *fetch* and *execute* phases are runned simultaneously**. This is possible because the logic governing these phases is entirely decoupled form the Control Matrix ($MC$).
 
 All internal signals within the CEP are implemented as levels (i.e. steady state voltages), simplifying the logic synchronization and ensuring that control signals remain stable.
 
-# Technology used in the implementation
+# Technology used in the implementation [[1](../0_Additional_resources/0_reference.md)]s
 Drawing inspiration from the Manchester Atlas computer, the CEP utilizes in its architecture the **ferrite rod storage technique** pioneered by Kilburn and Grimsdale. This technology is implemented within the read circuits and column drives, allowing for a high-density Control Matrix of $256 \times 240$.
 
 ## Matrix Driving and Sub-matrices

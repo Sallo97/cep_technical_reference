@@ -1,4 +1,4 @@
-# Micro-Order Selection
+# Micro-Order Selection [[1](../0_Additional_resources/0_reference.md)]
 The **Micro-programming Control Unit** (MCU) of the Calcolatrice Elettronica Pisana (CEP) is the most important component of the architecture, following the principles established by Wilke. In this design, high-level machine instructions, also indicated as **macro-instruction**, are concretely implemented in the architecture as a sequence of lower-level **micro-instruction**.
 
 Each micro-instruction serves two purposes:
