@@ -79,8 +79,6 @@ To handle communication with them, register $E$ worked as a buffer both for read
 
 ⚠︎ Note that the magnetic drum (the auxiliary memory) is an I/O device, still I have preferred to write about it in the Memory section.
 
-
-
 #### List of devices
 
 - **Magnetic Tapes** used both for input and output. The control circuit $NM$ responsible for their reading and writing worked using characters of 6-bit (+1 parity bit). It could've transfer blocks of words of dynamic length.

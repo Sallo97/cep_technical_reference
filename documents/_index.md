@@ -20,6 +20,8 @@ Style guide:
 
 - [CEP Overview](./1_Overview/1_cep_overview.md)
 
+- [Numbers Representation](./1_Overview/1_numbers.md)
+
 ## 2 - Main Control Unit
 - [Micro-Order Selection](./2_Main_control_unit/2_micro-order_selection.md)
 
