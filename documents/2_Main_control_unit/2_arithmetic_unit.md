@@ -255,4 +255,4 @@ The multiplication micro-program follows a digit-by-digit approach, employing $X
 #### Flow Diagram
 Below a flow diagram of the two micro-programs:
 
-![image](../../resources/flow_diagram_microprograms.pngP)
+![image](../../resources/flow_diagram_microprograms.png)

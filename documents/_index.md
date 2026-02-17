@@ -12,13 +12,13 @@ Style guide:
 # Index
 
 ## 1 - Overview
-- [CEP Overview](./1_Main_control_unit/1_kernel.md)
-
 - [Wilkes' Architecture](./1_Main_control_unit/1_wilkes_architecture.md)
 
 - [Synchronous and asynchronous machines](./1_Overview/1_synchronous_asynchronous.md)
 
 - [Ferrite Rod Storage Technique](./1_Overview/1_ferrite_rod.md)
+
+- [CEP Overview](./1_Overview/1_cep_overview.md)
 
 ## 2 - Main Control Unit
 - [Micro-Order Selection](./2_Main_control_unit/2_micro-order_selection.md)

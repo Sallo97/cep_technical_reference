@@ -22,3 +22,5 @@ Style guide:
 7. L. Alfieri, A. Andronico, C. Anzaldi, L. Calamia Barsanti, A. Caracciolo di Forino, I. Galligani, A. Laratta, O. Mancino, G. Mengali, M. Mercatanti, L. Spanedda, N. Wolkenstein, [Contributo al VI° Convegno - Mostra dell'Automazione e Strumentazione](http://pumax.isti.cnr.it/remote/linkdoccsce.php?authority=cnr.isti&collection=cnr.csce&idcode=1964-IS-001&langver=it), 1964.
 
 8. O. G. Mancino, M. Morandi Cecchi, [The Internal Structure of the FORTRAN CEP Translator](http://pumax.isti.cnr.it/remote/linkdoccsce.php?authority=cnr.isti&collection=cnr.csce&idcode=1965-A0-003&langver=it), 1965.
+
+9. O.G. Mancino, R. Sprugnoli, CEP : la calcolatrice elettronica pisana : scenario, storia, realizzazione, eredità, Pisa University Press, 2019.
