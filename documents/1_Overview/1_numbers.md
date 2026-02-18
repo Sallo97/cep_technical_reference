@@ -97,4 +97,4 @@ Floating point numbers in simple or double precision are equivalent to decimal n
 
 - the fractional part up to $8$ or $16$ digits respectively.
 
-- the exponent part in base $10$ ranging in $[-38, +38]$ for single precision and $[-4932, +4932]$ respectivelt.
+- the exponent part in base $10$ ranging in $[-38, +38]$ for single precision and $[-4932, +4932]$ respectively.

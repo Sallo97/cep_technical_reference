@@ -83,6 +83,8 @@ To handle communication with them, register $E$ worked as a buffer both for read
 
 - **Magnetic Tapes** used both for input and output. The control circuit $NM$ responsible for their reading and writing worked using characters of 6-bit (+1 parity bit). It could've transfer blocks of words of dynamic length.
 
+    The magnetic tapes where used both as auxiliary memory and as "quick entry". Inside of them the data is divided into blocks, whose length is fixed during the writing operation. The first cell of each block specifies its length.
+
 - **Two photoelectric sensors** used mainly for reading punched tapes at $300$ characters per second. Their control circuit $LF$ readed characters of 6-bit (+1 parity bit). It could've transfer blocks of dynamic length.
 
 - A **parallel printer** used mainly for output. It could write $150$ rows per minute with each row having $120$ characters. Each character occupied 11-bits. It had itsown control circuit, named $SP$.
