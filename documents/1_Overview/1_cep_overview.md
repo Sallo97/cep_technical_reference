@@ -48,7 +48,7 @@ It has the following components:
 The CEP's memory is divided into a *faster* **main memory** (constructed as a **magnetic core memory**) storing up to $8192$ words and access time of $5,5 \mu s$; and a *slower* **auxiliary memory** (in the form of a **magnetic drum**) of $16384$ words and access time of $10ms$.
 
 #### Main Memory Unit
-The main memory is divided into **two magnetic core groups**. Each group contains $4096$ cores, distributed among $36$ planes. 
+The main memory is divided into **two magnetic core groups**. Each group contains $4096$ cores, distributed among $36$ planes. The access time is of $10 \mu sec$ [[11](../0_Additional_resources/0_reference.md)]. 
 
 To allow memory accesses operations it employs a **Coincident-Current Driving System** using linear transformer matrices and reading circuits, inhibit circuits, and pre-drive circuits. Also to synchronize the access with the rest of the architecture, it used delay lines for determining timing pulses for register $Z$ and its switching circuit $DZ$.
 

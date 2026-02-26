@@ -27,6 +27,8 @@ Style guide:
 
 10. G. B. Gerace, [La temporizzazione, la minimizzazione dei tempi ed il controllo dinamico della CEP](http://pumax.isti.cnr.it/dfdownloadnew.php?ident=cnr.isti/cnr.csce/1963-B0-002&langver=it&scelta=Metadata), 1963.
 
+11. Caracciolo Di Forino A., Guerri L., [Manuale (C.E.P.) - Lista delle istruzioni](http://pumax.isti.cnr.it/dfdownloadnew.php?ident=cnr.isti/cnr.csce/1959-B4-012&langver=it&scelta=Metadata), 1959.
+
 ## Not found papers
 
 - O.G. Mancino, Le pseudo-istruzioni di entrata e uscita dei dati per la CEP, Felici, Pisa, 2000.

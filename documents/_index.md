@@ -15,8 +15,6 @@ Style guide:
 
 - [CEP Overview](./1_Overview/1_cep_overview.md)
 
-- [Numbers Representation](./1_Overview/1_numbers.md)
-
 - [Instructions](./1_Overview/1_instructions.md)
 
 - [Programming Languages](./1_Overview/1_programming_languages.md)
@@ -57,18 +55,22 @@ Style guide:
 - [Compute Unit](./3_Unità_di_calcolo/3_unità_di_calcolo.md)
 
 
-## 5 - Order Code
-- [Celle Parametriche](./4_Order_code/4_celle_parametriche.md)
+## 5 - Operations
+- [Numbers Representation](./1_Overview/1_numbers.md)
 
 - [Micro-instructions](./4_Order_code/4_microinstructions.md)
 
+- [List of micro-instructions](TODO)
+
+- [Parametric_cells](./4_Order_code/4_celle_parametriche.md)
+
 - [Instructions](./4_Order_code/4_instructions.md)
 
-- [Pseudoistruzioni](./4_Order_code/4_pseudoistruzioni.md)
+- [List of instructions](TODO)
+
+- [Pseudoinstructions](./4_Order_code/4_pseudoistruzioni.md)
 
 - [Automated checks](./4_Order_code/4_automated_checks.md)
-
-- [Arithmetic operations](./4_Order_code/4_arithmetic_operations.md)
 
 ## 6 - Main Memory
 - [Main Memory](./5_Main_memory/5_memory.md)
