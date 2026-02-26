@@ -24,3 +24,9 @@ Style guide:
 8. O. G. Mancino, M. Morandi Cecchi, [The Internal Structure of the FORTRAN CEP Translator](http://pumax.isti.cnr.it/remote/linkdoccsce.php?authority=cnr.isti&collection=cnr.csce&idcode=1965-A0-003&langver=it), 1965.
 
 9. O.G. Mancino, R. Sprugnoli, CEP : la calcolatrice elettronica pisana : scenario, storia, realizzazione, eredità, Pisa University Press, 2019.
+
+10. G. B. Gerace, [La temporizzazione, la minimizzazione dei tempi ed il controllo dinamico della CEP](http://pumax.isti.cnr.it/dfdownloadnew.php?ident=cnr.isti/cnr.csce/1963-B0-002&langver=it&scelta=Metadata), 1963.
+
+## Not found papers
+
+- O.G. Mancino, Le pseudo-istruzioni di entrata e uscita dei dati per la CEP, Felici, Pisa, 2000.

@@ -42,10 +42,22 @@ Style guide:
 
 - [Decimal Arithmetic Unit](./2_Main_control_unit/2_arithmetic_unit.md)
 
-## 3 - Unità di Calcolo
-- [Unità di Calcolo](./3_Unità_di_calcolo/3_unità_di_calcolo.md)
+## 3 - Dynamic Control
+- [Synchronous and asynchronous design](./3_Dynamic_control/sync_async.md)
 
-## 4 - Order Code
+- [Time considerations for 1-address machines](./3_Dynamic_control/times_1_addr_computers.md)
+
+- [In depth timing circuit](./3_Dynamic_control/timing_circuit.md)
+
+- [Temporal classes](./3_Dynamic_control/temporal_classes.md)
+
+- [Dynamic control](./3_Dynamic_control/dynamic_control.md)
+
+## 4 - Compute Unit
+- [Compute Unit](./3_Unità_di_calcolo/3_unità_di_calcolo.md)
+
+
+## 5 - Order Code
 - [Celle Parametriche](./4_Order_code/4_celle_parametriche.md)
 
 - [Micro-instructions](./4_Order_code/4_microinstructions.md)
@@ -58,10 +70,10 @@ Style guide:
 
 - [Arithmetic operations](./4_Order_code/4_arithmetic_operations.md)
 
-## 5 - Main Memory
+## 6 - Main Memory
 - [Main Memory](./5_Main_memory/5_memory.md)
 
-## 6 - Programmazione generale
+## 7 - Programs
 - [Sistema di Programmazione Generale della CEP](./6_Programmazione_generale/6_programmazione_generale.md)
 
 - [Subprograms organization](./6_Programmazione_generale/6_subprograms_organization.md)
@@ -78,14 +90,14 @@ Style guide:
 
 - [Error checking](./6_Programmazione_generale/6_error_checking.md)
 
-## 7 - External devices
+## 8 - External devices
 - [External Devices](./7_External_devices/7_external_devices.md)
 
 - [I/O](./7_External_devices/7_input_output.md)
 
 - [Sistema programmativo di entrata e di uscita dei dati per la CEP](./7_External_devices/7_io_program.md)
 
-## 8 - Miscellaneous
+## 9 - Miscellaneous
 - [Speed](./8_Miscellaneous/8_speed.md)
 
 - [CEP's Emulator for the FINAC](./8_Miscellaneous/8_cep_emulator.md)

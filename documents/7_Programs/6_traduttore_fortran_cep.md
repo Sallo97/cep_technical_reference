@@ -1,7 +1,7 @@
 # Traduttore Fortran CEP [[7](../0_Additional_resources/0_reference.md)]
 Recall that the language FORTRAN CEP is an extension of the first iteration of FORTRAN, with the main difference being the possibility of writing arithmetic expressions having numbers in any representation.
 
-The compilation procces is divided in two steps. 
+The compilation process is divided in two steps. 
 
 ## First step - Traduttore Fortran I
 
@@ -473,3 +473,10 @@ We can overcome this limitation by expoiting two properties of the CEP:
 - Being able to chane the origin of a group of celle parametriche.
 
     **NOTE:** *the document does not specify how the second property is used to optimize the "Asteriscamento". I think this is done to "enlarge" the $H0$ number of cells, but I'm not convince (recall a group $H0$ will always have 1 + 31 cells, with the first for the special cell $0$).*
+
+## Final Considerations [[9](../0_Additional_resources/0_reference.md)]
+The propositions are stored in a magnetic tape, while the tables are distributed among main memory and the magnetic drum. 
+
+The first phase used $38$ programs, $5$ subprograms, and $13$ tables; the second phase used $36$ programs, $2$ subprograms, and $14$ tables ($13$ of which are in common with the first phase).
+
+The total number of memory cell occupied by program and subprograms of the first phase is $6036$, while the secondo phase is $2492$. The compilers used additionally $23$ pseudo-instruction, whose memory occupation is of $680$ cells in main memory.
