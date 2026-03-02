@@ -55,7 +55,7 @@ Style guide:
 - [Compute Unit](./3_Unità_di_calcolo/3_unità_di_calcolo.md)
 
 
-## 5 - Operations
+## 5 - Instructions
 - [Numbers Representation](./1_Overview/1_numbers.md)
 
 - [Micro-instructions](./4_Order_code/4_microinstructions.md)
@@ -71,6 +71,10 @@ Style guide:
 - [Pseudoinstructions](./4_Order_code/4_pseudoistruzioni.md)
 
 - [Automated checks](./4_Order_code/4_automated_checks.md)
+
+- [Control Panel](./5_Instructions/5_control_panel.md)
+
+- [Manual instruction list](./5_Instructions/5_manual_instructions.md)
 
 ## 6 - Main Memory
 - [Main Memory](./5_Main_memory/5_memory.md)

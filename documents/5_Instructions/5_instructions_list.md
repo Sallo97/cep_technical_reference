@@ -24,7 +24,7 @@ Here are shown all the symbols and notation used to describe the instructions. S
 
 - $O$ is the **micro-operation code** register, i.e. it stores the current operation code of the micro-instruction to execute.
 
-- We refer with the lower-case counterpart of a register\divparametric cell name as its content **before** the current instruction has been executed. For example with $a$ we refer to the content of the arithmetic register $A$ before the instruction has been executed.
+- We refer with the lower-case counterpart of a register\parametric cell name as its content **before** the current instruction has been executed. For example with $a$ we refer to the content of the arithmetic register $A$ before the instruction has been executed.
 
 - We refer with the lower-case counterpart of a register\divparametric cells as its content **after** the current instruction has been executed. For example with $a^{'}$ we refer to the content of the arithmetic register $A$ after the instruction has been executed.
 
@@ -34,7 +34,6 @@ Here are shown all the symbols and notation used to describe the instructions. S
 
 ## Fixed point transfers, additions, and subtractions
 
-### Instructions from $Z$ to $A$
 | Mnemonic | Action | Updated content | Notes |
 | -------- | ------ | --------------- | ----- |
 | $Z\rightarrow A$ | $z \rightarrow A$ | $a^{'} = z$ | $Z$ is interpreted as an integer and copied into $A$. |
@@ -42,7 +41,6 @@ Here are shown all the symbols and notation used to describe the instructions. S
 | $A + Z \rightarrow A$ | $a + z \rightarrow A$ | $a^{'} = a + z \\ g^{'} = \tau$ | $A$ is summed with $Z$ and the result is stored into $A$. |
 | $A - Z \rightarrow A$ | $a - z \rightarrow A$ | $a^{'} = a - z \\ g = \tau$ | $A$ is subtracted with $Z$ and their result is stored into $A$. | 
 
-### Instructions from $A$ to $Z$
 | Mnemonic | Action | Updated content | Notes |
 | -------- | ------ | --------------- | ----- |
 | $A \rightarrow Z$ | $a \rightarrow Z$ | $z^{'} = a$ | The content of $A$ is copied into $Z$. |
@@ -51,7 +49,6 @@ Here are shown all the symbols and notation used to describe the instructions. S
 | $Z - A \rightarrow Z$ | $z - a \rightarrow Z$ | $z^{'} = z - a$ | $Z$ and $A$ are subtracted and their result is stored into $Z$. |
 
 
-### Instructions from $Z$ to $B$
 | Mnemonic | Action | Updated content | Notes |
 | -------- | ------ | --------------- | ----- |
 | $Z \rightarrow B$ | $z \rightarrow B$ | $b^{'} = z$ | $Z$ is interpreted as an integer and copied into $B$. | 
@@ -59,18 +56,15 @@ Here are shown all the symbols and notation used to describe the instructions. S
 | $B + Z \rightarrow B$ | $b + z \rightarrow B$ | $b^{'} = b + z \\ g^{'} = \tau$ | $B$ is summed with $Z$ and the result is stored in $B$.
 | $B - Z \rightarrow B$ | $b - z \rightarrow B$ | $b^{'} = b - z \\ g^{'} = \tau$ | $B$ is subtracted with $Z$ and the result is stored in $B$. | 
 
-### Instructions from $B$ to $Z$
 | Mnemonic | Action | Updated content | Notes |
 | -------- | ------ | --------------- | ----- |
 | $B \rightarrow Z$ | $b \rightarrow Z$ | $z^{'} = b \\ g^{'} = \tau$ | $B$ is copied into $Z$.
 
-### Absolute arithmetic instructions
 | Mnemonic | Action | Updated content | Notes |
 | -------- | ------ | --------------- | ----- |
 | $A + \|Z\| \rightarrow A$ | $a + \|z\| \rightarrow A$ | $a^{'} = a + \|z\| \\ g^{'} = \tau$ | $A$ is summed with the absolute value of $Z$, the result is stored in $A$. |
 | $A - \|Z\| \rightarrow A$ | $a = \|z\| \rightarrow A$ | $a^{'} = a - \|z\| \\ g^{'} = \tau$ | $A$ is subtracted with the absolute value of $Z$, the result is stored in $A$. |
 
-### Instructions from $C$ to $A$
 | Mnemonic | Action | Updated content | Notes |
 | -------- | ------ | --------------- | ----- |
 | $C \rightarrow A$ | $c \rightarrow A$ | $a^{'} = c$ | $C$ is interpreted as an integer and copied into $A$. |
@@ -78,7 +72,6 @@ Here are shown all the symbols and notation used to describe the instructions. S
 | $C + A \rightarrow A$ | $c + a \rightarrow A$ | $a^{'} = c + a \\ g^{'} = \tau$ | $C$ is summed with $A$ and the result stored in $A$. |
 | $C - A \rightarrow A$ | $c - a \rightarrow A$ | $a^{'} = c - a \\ g^{'} = \tau$ | $C$ is subtracted with $A$ and the result stored in $A$. |
 
-### Instructions from $C$ to $B$
 | Mnemonic | Action | Updated content | Notes |
 | -------- | ------ | --------------- | ----- |
 | $C \rightarrow B$ | $c \rightarrow B$ | $b^{'} = c$ | $C$ is interpreted as an integer and copied into $B$. |
@@ -86,7 +79,6 @@ Here are shown all the symbols and notation used to describe the instructions. S
 | $C + B \rightarrow B$ | $c + b \rightarrow B$ | $b^{'} = c + b \\ g^{'} = \tau$ | $C$ and $B$ are summed together and the result is stored in $B$. |
 | $C - B \rightarrow B$ | $c - b \rightarrow B$ | $b^{'} = c - b \\ g^{'} = \tau$ | $C$ and $B$ are subtracted together and the results is stored in $B$. |
 
-### Instructions from $O$ to $Z$
 | Mnemonic | Action | Updated content | Notes |
 | -------- | ------ | --------------- | ----- |
 | $O \rightarrow Z$ | $o \rightarrow Z$ | $z^{'} = o$ | $O$ is copied into $Z$. |
@@ -94,7 +86,6 @@ Here are shown all the symbols and notation used to describe the instructions. S
 | $Z \leftrightarrow A$ | $z \rightarrow A \\ a \rightarrow Z$ | $a^{'} = z \\ z^{'} = a$ | $A$ and $Z$ are swapped. | 
 | $Z \leftrightarrow B$ | $z \rightarrow B \\ b \rightarrow Z$ | $b^{'} = z \\ z^{'} = b$ | $B$ and $Z$ are swapped. |
 
-### Instructions from $C$ to $P$
 | Mnemonic | Action | Updated content | Notes |
 | -------- | ------ | --------------- | ----- |
 | $\star C \rightarrow P$ | $c \rightarrow P$ | $p^{'} = c$ | $C$ is copied into parametric cell $P$. |
@@ -102,7 +93,6 @@ Here are shown all the symbols and notation used to describe the instructions. S
 | $\star P + C \rightarrow P$ | $p + c \rightarrow P$ | $p^{'} = p + c$ | Parametric cell $P$ and $C$ are summed and stored in $P$. |
 |$\star P - C \rightarrow P$ | $p - c \rightarrow P$ | $p^{'} = p - c \\ g^{'} = \tau$ | Parametric cell $P$ and $C$ are subtracted and stored in $P$. |
 
-### Instructions from $Z$ to $P$
 | Mnemonic | Action | Updated content | Notes |
 | -------- | ------ | --------------- | ----- |
 | $\star Z \rightarrow P$ | $z \rightarrow P$ | $p^{'} = z$ | $Z$ is copied into parametric cell $P$. |
@@ -110,15 +100,29 @@ Here are shown all the symbols and notation used to describe the instructions. S
 | $\star P + Z \rightarrow P$ | $p + z \rightarrow P$ | $p^{'} = p + z$ | Parametric cell $P$ and $Z$ are summed and stored in $P$. |
 |$\star P - Z \rightarrow P$ | $p - z \rightarrow P$ | $p^{'} = p - z \\ g^{'} = \tau$ | Parametric cell $P$ and $Z$ are subtracted and stored in $P$. |
 
-### Instructions between parametric cells
 | Mnemonic | Action | Updated content | Notes |
 | -------- | ------ | --------------- | ----- |
 | $\star P \leftrightarrow P$ | $q \rightarrow P \\ p \rightarrow Q$ | $p^{'} = q \\ q^{'} = p$ | Parametric cells $P$ and $Q$ are swapped. |
 
-### Operations from $P$ to $Z$
 | Mnemonic | Action | Updated content | Notes |
 | -------- | ------ | --------------- | ----- |
 | $\star P \rightarrow Z$ | $p \rightarrow Z$ | $z^{'} = p$ | The parametric cell $P$ is copied into $Z$. |
+
+| Mnemonic | Action | Updated content | Notes |
+| -------- | ------ | --------------- | ----- |
+| $-A \rightarrow A$ | $-a \rightarrow A$ | $a^{'} = -a \\ g^{'} = \tau$ | $A$ negation. |
+| $-B \rightarrow B$ | $-b \rightarrow B$ | $b^{'} = -b \\ g^{'} = \tau$ | $B$ negation. |
+| $-Z \rightarrow Z$ | $-z \rightarrow Z$ | $z^{'} = -z \\ g^{'} = \tau$ | $Z$ negation. |
+
+| Mnemonic | Action | Updated content | Notes |
+| -------- | ------ | --------------- | ----- |
+| $\star A + C \rightarrow P$ | $a + c \rightarrow P$ | $p^{'} = a + c \\ g^{'} = \tau$ | |
+| $\star B + C \rightarrow P$ | $b + c \rightarrow P$ | $p^{'} = b + c \\ g^{'} = \tau$ | | 
+
+| Mnemonic | Action | Updated content | Notes |
+| -------- | ------ | --------------- | ----- |
+| $Z \rightarrow B \rightarrow A$ | $z \rightarrow B \\ b \rightarrow A$ | $a^{'} = b \\ b^{'} = z$ | |
+
 
 ## Fixed point multiplications instructions
 
@@ -209,6 +213,7 @@ Recall that with $Z^{1}$ we refer to the memory cell right after $Z$.
 | -------- | ------ | --------------- | ----- |
 | $AB + Z \rightarrow AB$| $(a,b) + (z, z^{1}) \rightarrow A,B$ | defined $y = b + z^{1}$: $$b^{'} = (0 y_1 y_2 \ldots y_{35}) \\ a^{'} = a + z + 2^{-35} \times y_0 \\ g^{'} = \tau$$ | Double precision addition. |
 
+
 When $b_0 = z_0^{1} = 0$ we declare $u$ as a double precision number having $a$ and $b$ as its first and second portions; we assign $v$ to the number having $z$ and $z^{1}$ as its first and second portion. Then $a^{'}$ and $b^{'}$ are the most significant and least significant part of the number $w = u + v$.
 
 ### Overflow rule for addition
@@ -228,10 +233,39 @@ $\tau$ checks the sum $a - z - 2^{35} \times y_0$.
 | -------- | ------ | --------------- | ----- |
 | $$-Z \rightarrow AB$$ | $-(z, z^{1}) \rightarrow A,B$ | defined $y = -z$: $$b^{'} = (0 y_1 y_2 \ldots y_{35}) \\ a^{'} = (-z - 2^{35} \times y_0) \\ g^{'} = \tau$$| Double precision negation.
 
-If $b_0 = 0$ then $a^{'}$ and $b^{'}$ are the first and second portion of the double precision number $-x$ where $x$ has $a$ and $b$ as most significant parti
+If $b_0 = 0$ then $a^{'}$ and $b^{'}$ are the first and second portion of the double precision number $-x$ where $x$ has $a$ and $b$ as most significant part.
 
 ### Overflow rule for double precision negation
 $\tau$ refers to the sum $-z - 2^{-35} \times y_0$.
+
+### The instruction $COR$
+This instruction sums and subtracts two double precision numbers, in which the first one is $AB$ and the other is obtained by concatening two non-consecutive memory cells. The result is stored in $AB$.
+
+The type of operation done by the instruction depends on the modified address $o$:
+
+- if $o = 0 \rightarrow$ do a sum operation.
+
+- if $o = 1 \rightarrow$ do a subtraction operation.
+
+Given $x$ and $y$ the two double precision number used by the instruction s.t.:
+
+- $a = x^{*} \land b = x^{**}$
+
+- assume i and j are the address of the cells containing $y$, $(i) = y^{*} \land (j) = y^{**} $.
+
+Then the sum and subtractions are done in the following way:
+
+| Num of operation            | Sum | Subtraction     |
+|---------------------------- | --- | --------------- |
+| 1 | $B + Z \rightarrow B$   | $B - Z \rightarrow B$ |
+| 2 | $A + Z \rightarrow A$   | $A - Z \rightarrow A$ |
+| 3 | $COR$                   | $COR                  |
+
+where the address modified by operation number $1$ and $2$ is respectively $j$ and $i$.
+
+$COR$ checks the first bit of $B$ ($b_0$) and if it is set to $1$ then it zeros it and modifies also $A$ by either summing and subtracting it by $2^{-35}$. 
+
+The overflow is also checked by setting $g^{'} = \tau$.
 
 ## Comparison instructions
 
@@ -317,6 +351,8 @@ The jump condition will be checked using the comparison flags $R_0$ and $R_1$, w
 | Mnemonic | Condition | Action when valid | Action when false | Action always done |
 | -------- | ------ | --------------- | ----- | --- |
 | $\star IPS$ | $p^{'} < 0$ | $n^{'} = o$ | $n^{'} = n + 1$ | $p^{'} = p + 1$ |
+| $\star IP \geq$ | $p^{'} \geq 0$ | $n^{'} = o$ | $n^{'} = n + 1$ | $p^{'} = p + 1 $ |
+| $\star IP <$ | $p^{'} < 0$ | $n^{'} = o$ | $n^{'} = n + 1$ | $p^{'} = p - 1$ |
 
 ## Unitary decrement & jump instruction
 | Mnemonic | Condition | Action when valid | Action when false | Action always done |
@@ -349,6 +385,7 @@ The jump condition will be checked using the comparison flags $R_0$ and $R_1$, w
 | $\bar{Z} = A$ | $\bar{Z} \rightarrow A$ | $a^{'} = \bar{z}$ | |
 | $Z \land B \rightarrow B$ | $z \land b \rightarrow B$ | $b^{'} = z \land b$ | |
 | $A \land Z \bar{Z} \rightarrow AB$ | $a \land z \rightarrow A \\ a \land \bar{z} \rightarrow B $ | $a^{'} = a \land z \\ b^{'} = a \land \bar{z}$
+| $Z \land A \rightarrow Z$ | $z \land a \rightarrow Z$| $z^{'} = z \land a$
 
 ## Bit counter instruction
 | Mnemonic | Action | Updated content | Notes |
@@ -409,3 +446,137 @@ An overflow is detected when:
 | $F - \|Z\| \rightarrow F$ | $a - z \rightarrow A$ | $a^{'} = a - z \\ b^{'} = \nu \\ g^{'} = \tau$ | |
 | $MOF$ | $a\times z \rightarrow A$ | $a^{'} = a \times z \\ b^{'} = \nu \\ g^{'} = \tau$ | |
 | $DIF$ | $a \div z \rightarrow A$ | $a^{'} = a \div z \\ b^{'} = \nu \\ g^{'} = \tau$
+
+## Input instructions
+
+### Quick input devices overview
+- A teletype for input $MI$ able to send to the computer a character written in the keyboard (through instruction $\star EAP$).
+
+- One or more photoelectric readers $LF_1, LF_2, \ldots$ for reading a punched tape character by character (trough instruction $\star EAP$). From reader $LF_1$ it is possible to read an entire block of words by either calling instruction $\star ELZ$ or by pressing from the control panel the button $QC$. Reading in chuncks is done for sending binary programs while the machine is empty (from the italian *"a macchina scarica"*).
+
+- A keyboard $Qz$ of 36-bits for writing into memory a world setted over $QZ$ (through instruction $QZZ$).
+
+### The instruction $\star EAP$
+| Mnemonic | Action | Updated content | Notes |
+| -------- | ------ | --------------- | ----- |
+| $\star EAP$ | | defined $e = (0 \ldots 0c_{30} c_{31} \ldots c_{35})$ as the word obtained by reading a character from an input device, then  $$a^{'} = e \\ p^{'} = e$$ | Reads a character.|
+
+The device from which the character is retrieved depends on the memory address specified:
+
+| Memory Address | Input Device                         |
+| -------------- | ------------------------------------ |
+| $o = 128$      | $MI$ (teletype)                      |
+| $o = 256$      | $LF_1$ (first photoelectric reader)  |
+| $o = 512$      | $LF_2$ (second photoelectric reader) |
+
+### The instruciton $\star ELZ$
+⚠︎ This instruction will read only from the first photoelectric reader $LF_1$.
+
+A block of characters is composed of $n + 1$ words in which the first one, referred as $n$, specifies the length of the chunk ($0 < n < 4096$). Each word is broken up into six consecutive characters. We indicate with $L_0 L_1 \ldots L_n$ the words of a block and with $Z_n$ the memory cell having address $o + h$
+
+| Mnemonic | Action | Updated content | Notes |
+| -------- | ------ | --------------- | ----- |
+| $\star ELZ$    | | assuming $ - \leq h \leq l_0 - 1$ then $$p^{'} = l_0 \\ z^{'}_h = l_n + 1$$ | Reads a block of characters from $LF_1$. |
+
+### The instruction $EQZ$
+| Mnemonic | Action | Updated content | Notes |
+| -------- | ------ | --------------- | ----- |
+| $EQZ$    | | By setting $q$ as the content of keyboard $Qz$ then: $$z^{'} = q$$ | Reading from keyboard. | 
+
+## Output instructions
+
+### Quick output devices overview
+
+- A teletype for output $RI$ for writing a character (through instruction $EAU$).
+
+- One or more tape punchers $PV_1, PV_2, \ldots$ for punching tapes character by character (through instruction $EAU$).
+
+### The instruction $EAU$
+| Mnemonic | Sent content | Notes |
+| -------- | ------------ | ----- |
+| $EAU$    | $a_{30} \ldots a_{35}$ | Sends the last 6-bits of register A to an output device. |
+
+Which output device receives the content depends on the value of the address $o$:
+
+| Memory Address      | Output Device                         |
+| --------------      | ------------------------------------- |
+| $0 \leq o \leq 102$ | To a memory cell of Main Memory or Auxiliary Memory.                                                       |
+| $o = 128$           | $RI$ (output teletype)                |
+| $o = 256$           | $PV_1$ (first tape puncher)           |
+| $o = 512$           | $PV_2$ (second tape puncher)          |
+
+### The instruction $ESP$
+Prints the entire content of the "small auxiliary memory" (from the italian *"memorietta ausiliaria"*) over a line and then frees it. After the print it executes a jump over the paper proportionale to the memory address $o$.
+
+## Magnetic drum instructions
+
+### Magnetic drum overview
+The CEP uses as auxiliary memory a magnetic drum, referred to as $TM$, having size of $16384$ words. It can only communicate with Main Memory $$Z for sending or receiving chunks of data. The blocks to transfer can have variable length and occupy consecutive cells in both $TM$ (T_0, T_1, \ldots) and $Z$ ($Z_0, Z_1, \ldots$). The starting cell of the transfer fro both the receiver and the sender are arbitrary and chosen when calling a transfer instruction.
+
+### Order of execution when transfering content
+For making a transfer of data, its necessary to always execute two instructions:
+
+1. The first must always be the ordinary instruction $ITM$. its purpose is to prefix the starting cell of the magnetic drum.
+
+1. The second depends on the transfer we want to execution.
+
+### The instruction $ITM$
+Sets as the starting cell of the magnetic drum the one pointed by address $o$.
+
+When transferring data from/to the magnetic drum, **$ITM$ must be called first before any other transfer instruction**.
+
+### The transfer instructions
+| Mnemonic | Action | Updated content | Notes |
+| -------- | ------ | --------------- | ----- |
+| $\star EZT$ | | Setting $Z_h$ as the cell in Main Memory having address $o + h$: $$t^{'}_0 = p \\ t^{'}_{h+1} = Z_h$$  with $0 \leq h \leq p-1$ | Transfer from Main Memory to the Magnetic Drum using blocks. |
+| $\star ETZ$ | | $$p^{'} = t_0 \\ z^{'}_h = t_{h+1}$$ with $0 \leq h \leq t_0 -1$ | Transfer from the Magnetic Drum to Main Memory using blocks. |
+| $\star EZK $| | $$t^{'}_{h} = Z_h$$ with $o \leq h \leq p - 1$| Normal transfer from Main Memory to the Magnetic Drum. |
+| $\star EKZ$ | | $$Z^{'}_{h} = t_{h}$$ with $o \leq h \leq p - 1$ | Normal transfer from the Magnetic Drum onto Main Memory. |
+
+## Magnetic tape readers instructions
+
+### General magnetic tape readers overview
+The CEP has a complex of magnetic tape readers, referred to as $NM$. They are used both as auxiliary memory, each tape being able to store up to $250.000$ words, and as fast input if used in conjunction with the punched taples or printers. 
+
+The computer is able to control up to eight magnetic tape readers in parallel.
+
+### Magnetic tapes structure
+Over the magnetic tables the data is broken down into blocks, whose length is fixed when they are written (through instruction $EZN$) and written over the first character of each block. The cells of a block are referred as $M_0 M_1 M_2 \ldots $.
+
+Each block in a tape is physically separated with empty cells, necessary for letting the device star and termination operations over the tape. 
+
+For this reason we can substitute a block only with another block of the same size. Each tape can contain up to $4.096$ blocks. Each block is associated to a 15-bits address: 
+$$j = (u, k) = u \times 2^{12} + k$$
+
+where:
+
+- **$u$ is the unit identifier:** the first three bits (i.e. $0 \leq u \leq 7$ )of the address specify which connected magnetic tape unit we need to use.
+
+- **$k$ is the block identifier:** the last twelve bits (i.e. $0 \leq k \leq 4.093$) determine the block requested for the operation.
+
+
+### Transfers overview
+The magnetic tape readers can only communicate with the Main Memory $Z$, with transfers being done a block at a time. 
+
+To execute a transfer an user needs always to execute two (special) instructions:
+
+1. The first one is always $BNM$ which searches over the magnetic tape readers complex the requested block.
+
+1. The second one is either $EZN$ or $ENZ$ which specifies the type of transfer to execute.
+
+### The instruction $\star BNM$
+To each unit being part of the magnetic tape readers comples is associated a parametric cell $N(u)$ with $0 \leq u \leq 7$. Each parametric cell containes the pair $(u,k)$ that is the identifier of the associated unit $u$ and the block currently set by the drum $k$ (at the start all cells are set as $(u, 0)$). 
+
+For selecting block $(u, k^{'})$ we need to set $o = u \times 2^{12} + k^{'}$ and $P = N(u)$, i.e. $p = u\times 2^{12} + k$.
+
+During execution the requested unit moves to the requested block. The direction of the shifting depends on the sign of $o - p = k^{'} - k$: if positive will move forward, otherwise backward.
+
+Then $P$ is updated with $p^{'} = o + 1 = u \times 2^{12} + k^{'} + 1$ s.t. it contains the new drum position.
+
+### The transfer instructions
+| Mnemonic | Updated content | Notes |
+| -------- | --------------- | ----- |
+| $\star EZN$ | Assuming $M_h$ is the memory cell in the magnetic tape reader unit and $Z_h$ the memory cell in Main Memory at addresss $o + h$: $$m^{'}_0 = P \\ m^{'}_{h+1} = Z_{h}$$ with $0 \leq h \leq p-1$ | Block transfer from Main Memory to a Magnetic Tape Unit.
+| $\star ENZ$ | $$p^{'} = m_0 \\ Z^{'}_{h} = m_{h + 1}$$ with $0 \leq h \leq m_{0} - 1$ | Block transfer from a Magnetic Tape Unit to Main Memory. |
+
+
