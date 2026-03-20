@@ -1,4 +1,4 @@
-# Manual instructions
+# Manual instructions[[11](../0_Additional_resources/0_reference.md)]
 Manual instructions are instructions sent to the CEP through the control panel. They mainly correspond to debug operations.
 
 ## The $Q \ TZ$ instruction
@@ -50,7 +50,7 @@ Instruction $Q \ IV$ is nedded for reading the word at cell $Z_I$ of address $q_
 $$n^{'} = n$$
 
 ## The $ZZZ$ instruction
-Instruction $ZZZ$ zeros all memoy cells. Each memory cell contains the $ALT$ instruction. It does not modify any reigster. The machine stops right after.
+Instruction $ZZZ$ zeros all memoy cells. Each memory cell contains the $ALT$ instruction. It does not modify any register. The machine stops right after.
 
 ## The $IES$ instruction
 Instruction $IES$ allows the user to execution any instruction written in $QZ$, **without automatically increasing the program counter (i.e. numerator $N$).**

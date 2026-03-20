@@ -32,13 +32,13 @@ The addresses are 15 bit wide.
 
 It has the following components:
 
-- Register $H^{0}$ stores the start address of the **local parametric cell group**. This group of parametric cells is reserved to the current program in execution. It can be though as the memory area where the local variables of a block of code is stored.
+- Register $H^{0}$ stores the start address of the **first parametric cell group**. 
 
-- Register $H^{1}$ (also referred in some papers as $H_U$) stores **the start address of the global parametric cells groups**. This group of parametric cells is common to all programs. it can be though as the global heap of the execution.
+- Register $H^{1}$ (also referred in some papers as $H_U$) stores **the start address of the second parametric cells groups**. 
 
-- Register $R$ stored the **relative address** of the two parametric cells in reserved memory.
+- Register $R$ stores the **relative address** of the two parametric cells in reserved memory.
 
-- Register $N$ stored the **address of the instruction being called**.
+- Register $N$ stores the address storing the current instruction. It works as the program counter register of the computer.
 
 - The **adder** $AJ$.
 
@@ -50,10 +50,10 @@ The CEP's memory is divided into a *faster* **main memory** (constructed as a **
 #### Main Memory Unit
 The main memory is divided into **two magnetic core groups**. Each group contains $4096$ cores, distributed among $36$ planes. The access time is of $10 \mu sec$ [[11](../0_Additional_resources/0_reference.md)]. 
 
-To allow memory accesses operations it employs a **Coincident-Current Driving System** using linear transformer matrices and reading circuits, inhibit circuits, and pre-drive circuits. Also to synchronize the access with the rest of the architecture, it used delay lines for determining timing pulses for register $Z$ and its switching circuit $DZ$.
+To allow memory access operations it employs a **Coincident-Current Driving System** using linear transformer matrices and reading circuits, inhibit circuits, and pre-drive circuits. Also to synchronize the access with the rest of the architecture, it used delay lines for determining timing pulses for register $Z$ and its switching circuit $DZ$.
 
 #### Auxiliary Memory Unit
-The auxiliary memory is a magnetic drum, which has control circuit $TM$ for both reading and writing using characters of 6-bit (+1 parity bit). It was possible to transfer from or to it both single memory word or contiguous blocks of memory words of dynamic length.
+The auxiliary memory is a magnetic drum, having control circuit $TM$ for both reading and writing using characters of 6-bit (+1 parity bit). It was possible to transfer from or to it both single memory word or contiguous blocks of memory words of dynamic length.
 
 ### Control Unit
 The control unit is responsible for orchestrating the execution. It is based upon Wilkes' micro-program design. Physically it is constructed as a **Manually Programmable Read Only Memory** (MPROM). 
@@ -77,7 +77,7 @@ The CEP had a series of both input and output devices.
 
 To handle communication with them, register $E$ worked as a buffer both for reading from or writing to an I/O device. The size was of one memory word (36-bit).
 
-⚠︎ Note that the magnetic drum (the auxiliary memory) is an I/O device, still I have preferred to write about it in the Memory section.
+⚠︎ Note that the magnetic drum (the auxiliary memory) is an I/O device, still we have preferred to write about it in the Memory section.
 
 #### List of devices
 
@@ -102,9 +102,6 @@ To handle communication with them, register $E$ worked as a buffer both for read
 ### Speed metrics 
 
 <!-- Copy table 3.1 at page 99 in CEP's book. -->
-
-
-The control unit resided in a Manually Programmable Read Only Memory (MPROM). The idea behind its development came thanks to prototype donated by professor T. Kilburn from Manchester University.
 
 ### Power Consumption data
 Supply voltage from $-150V$ to $+250V$ in $50V$ steps.

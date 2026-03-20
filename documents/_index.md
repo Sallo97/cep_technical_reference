@@ -6,111 +6,105 @@ Style guide:
     
     Documents must always be inside exactly one chapter and they must be putted as links pointing to the real document in the folder.
 
-    The real documents must contain as prefix the chapter number where they belong (e.g. the document Wilkes' Architecture which is stored inside Chapter 1, must be a file in the name 1_wilkes_architecture.md).
+    The real documents must contain as prefix the chapter number where they belong .
 -->
 
 # Index
 
+## 0 - Helper Resources
+
+- [Glossary](./helper_resources/glossary.md)
+
+- [Reference](./helper_resources/reference.md)
+
+- [Notation](./helper_resources/notation.md)
+
 ## 1 - Overview
 
-- [CEP Overview](./1_Overview/1_cep_overview.md)
+- [CEP overview](./src/cep_overview.md)
 
-- [Instructions](./1_Overview/1_instructions.md)
+## 2 - Microprogramming
+- [Ferrite rod storage technique](./src/ferrite_rod.md)
 
-- [Programming Languages](./1_Overview/1_programming_languages.md)
+- [Wilkes' architecture](./src/wilkes_architecture.md)
 
-## 2 - Main Control Unit
-- [Ferrite Rod Storage Technique](./2_Main_control_unit/2_ferrite_rod.md)
+- [Synchronous and asynchronous machines](./src/sync_async.md)
 
-- [Wilkes' Architecture](./2_Main_control_unit/2_wilkes_architecture.md)
+- [Micro-order selection](./src/micro-order_selection.md)
 
-- [Synchronous and asynchronous machines](./2_Main_control_unit/2_synchronous_asynchronous.md)
+- [Sequential circuits](./src/sequential_circuits.md)
 
-- [Micro-Order Selection](./2_Main_control_unit/2_micro-order_selection.md)
+- [Control signals](./src/control_signals.md)
 
-- [Sequential Circuits](./2_Main_control_unit/2_sequential_circuits.md)
+- [Interrupts](./src/interrupts.md)
 
-- [Timing System](./2_Main_control_unit/2_timing_system.md)
+- [Architecture's final schematic](./src/final_schematic.md)
 
-- [Control Signals](./2_Main_control_unit/2_control_signals.md)
+## 3 - Timing system
+- [Synchronous and asynchronous design](./src/synchronous_asynchronous.md)
 
-- [Interrupts](./2_Main_control_unit/2_interrupts.md)
+- [Timing system](./src/timing_system.md)
 
-- [Final Schematic](./2_Main_control_unit/2_final_schematic.md)
+- [Time considerations for 1-address machines](./src/times_1_addr_computers.md)
 
-- [Decimal Arithmetic Unit](./2_Main_control_unit/2_arithmetic_unit.md)
+- [In depth timing circuit](./src/timing_circuit.md)
 
-## 3 - Dynamic Control
-- [Synchronous and asynchronous design](./3_Dynamic_control/sync_async.md)
+- [Temporal classes](./src/temporal_classes.md)
 
-- [Time considerations for 1-address machines](./3_Dynamic_control/times_1_addr_computers.md)
+- [Dynamic control](./src/dynamic_control.md)
 
-- [In depth timing circuit](./3_Dynamic_control/timing_circuit.md)
+## 4 - Arithmetic unit
+- [Compute unit](./src/compute_unit.md)
 
-- [Temporal classes](./3_Dynamic_control/temporal_classes.md)
-
-- [Dynamic control](./3_Dynamic_control/dynamic_control.md)
-
-## 4 - Compute Unit
-- [Compute Unit](./3_Unità_di_calcolo/3_unità_di_calcolo.md)
-
+- [Decimal arithmetic unit](./src/arithmetic_unit.md)
 
 ## 5 - Instructions
-- [Numbers Representation](./1_Overview/1_numbers.md)
+- [Number representations](./src/number_representations.md)
 
-- [Micro-instructions](./4_Order_code/4_microinstructions.md)
+- [Microinstructions](./src/microinstructions.md)
 
-- [List of micro-instructions](TODO)
+- [Parametric cells](./src/parametric_cells.md)
 
-- [Parametric_cells](./4_Order_code/4_celle_parametriche.md)
+- [Instruction structure](./src/instructions.md)
 
-- [Instructions](./4_Order_code/4_instructions.md)
+- [List of instructions](./src/instructions_list.md)
 
-- [List of instructions](TODO)
+- [Pseudoinstructions](./src/pseudoistructions.md)
 
-- [Pseudoinstructions](./4_Order_code/4_pseudoistruzioni.md)
+- [Automated checks](./src/automated_checks.md)
 
-- [Automated checks](./4_Order_code/4_automated_checks.md)
+- [Control Panel](./src/control_panel.md)
 
-- [Control Panel](./5_Instructions/5_control_panel.md)
-
-- [Manual instruction list](./5_Instructions/5_manual_instructions.md)
+- [Manual instruction list](./src/manual_instructions.md)
 
 ## 6 - Main Memory
-- [Main Memory](./5_Main_memory/5_memory.md)
+- [Main memory](./src/memory.md)
 
 ## 7 - Programs
-- [Sistema di Programmazione Generale della CEP](./6_Programmazione_generale/6_programmazione_generale.md)
+- [CEP general system programs](./src/general_system_programs.md)
 
-- [Subprograms organization](./6_Programmazione_generale/6_subprograms_organization.md)
+- [Subprograms organization](./src/subprograms_organization.md)
 
-- [Fortran CEP](./6_Programmazione_generale/6_fortran_cep.md)
+- [Fortran CEP](./src/fortran_cep.md)
 
-- [Assemblatore CEP](./6_Programmazione_generale/6_assemblatore_cep.md)
+- [Assemblatore CEP](./src/cep_assembler.md)
 
-- [Linguaggio Programmativo Simbolico CEP](./6_Programmazione_generale/6_linguaggio_simbolico.md)
+- [CEP Symbolic Programming Language (LPSC)](./src/lpsc.md)
 
-- [Traduttore Simbolico Binario CEP](./6_Programmazione_generale/6_traduttore_simbolico.md)
+- [Symbolic CEP to Binary CEP Translator (TSBC)](./src/tsbc.md)
 
-- [Traduttore Fortran CEP](./6_Programmazione_generale/6_traduttore_fortran_cep.md)
+- [FORTRAN CEP to Symbolic CEP Translator (TFSC)](./src/tfsc.md)
 
-- [Error checking](./6_Programmazione_generale/6_error_checking.md)
+- [Error checking](./src/error_checking.md)
 
 ## 8 - External devices
-- [External Devices](./7_External_devices/7_external_devices.md)
+- [External Devices](./src/external%20devices.md)
 
-- [I/O](./7_External_devices/7_input_output.md)
+- [I/O](./src/input_output.md)
 
-- [Sistema programmativo di entrata e di uscita dei dati per la CEP](./7_External_devices/7_io_program.md)
+- [Sistema programmativo di entrata e di uscita dei dati per la CEP](./src/io_program.md)
 
 ## 9 - Miscellaneous
-- [Speed](./8_Miscellaneous/8_speed.md)
+- [Speed](./src/speed.md)
 
-- [CEP's Emulator for the FINAC](./8_Miscellaneous/8_cep_emulator.md)
-
-## Additional Resources
-- [Glossary](./0_Additional_resources/0_glossary.md) 
-
-- [Reference](./0_Additional_resources/0_reference.md)
-
-- [Notation](./0_Additional_resources/0_notation.md)
+- [CEP's Emulator for the FINAC](./src/cep_emulator.md)

@@ -1,4 +1,4 @@
-# General notation
+# General notation[[11](../0_Additional_resources/0_reference.md)]
 Here are shown all the symbols and notation used to describe the instructions. Specific notations for particular group of instructions are provided at the beginning of their section.
 
 - $A$ and $B$ are the two **arithmetic registers**, each occupying a memory word (i.e. $36$-bits).
@@ -37,14 +37,14 @@ Here are shown all the symbols and notation used to describe the instructions. S
 | Mnemonic | Action | Updated content | Notes |
 | -------- | ------ | --------------- | ----- |
 | $Z\rightarrow A$ | $z \rightarrow A$ | $a^{'} = z$ | $Z$ is interpreted as an integer and copied into $A$. |
-| $-Z \rightarrow A$ | $-z \rightarrow A$ | $a^{'} = -z$ | $Z$ is interpreted as an integer, which is negated and copied into $A$ |
+| $-Z \rightarrow A$ | $-z \rightarrow A$ | $a^{'} = -z \\ g^{'} = \tau$ | $Z$ is interpreted as an integer, which is negated and copied into $A$ |
 | $A + Z \rightarrow A$ | $a + z \rightarrow A$ | $a^{'} = a + z \\ g^{'} = \tau$ | $A$ is summed with $Z$ and the result is stored into $A$. |
 | $A - Z \rightarrow A$ | $a - z \rightarrow A$ | $a^{'} = a - z \\ g = \tau$ | $A$ is subtracted with $Z$ and their result is stored into $A$. | 
 
 | Mnemonic | Action | Updated content | Notes |
 | -------- | ------ | --------------- | ----- |
 | $A \rightarrow Z$ | $a \rightarrow Z$ | $z^{'} = a$ | The content of $A$ is copied into $Z$. |
-| $-A \rightarrow Z$ | $-a \rightarrow Z$ | $z^{'} = -a$ | The content of $A$ is negated and copied into $Z$.
+| $-A \rightarrow Z$ | $-a \rightarrow Z$ | $z^{'} = -a \\ g^{'} = \tau$ | The content of $A$ is negated and copied into $Z$.
 | $Z + A \rightarrow Z$ | $z + a \rightarrow Z$ | $z^{'} = z + a$ | $Z$ and $A$ are summed and their result is stored into $Z$. |
 | $Z - A \rightarrow Z$ | $z - a \rightarrow Z$ | $z^{'} = z - a$ | $Z$ and $A$ are subtracted and their result is stored into $Z$. |
 
