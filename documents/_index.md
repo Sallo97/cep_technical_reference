@@ -56,9 +56,10 @@ Style guide:
 - [Architecture's final schematic](./src/final_schematic.md)
 
 ## 4 - Arithmetic unit
-- [Compute unit](./src/compute_unit.md)
 
 - [Decimal arithmetic unit](./src/arithmetic_unit.md)
+
+- [Sum instruction description](./src/sum_instruction.md)
 
 ## 5 - Instructions
 - [Number representations](./src/number_representations.md)
