@@ -41,11 +41,13 @@ Style guide:
 
 ## 3 - Timing system
 
-- [Timing system](./src/timing_system.md)
+- [Timing system overview](./src/timing_system_overview.md)
+
+- [Internal timing system](./src/internal_timing_system.md)
+
+- [External timing system](./src/external_timing_system.md)
 
 - [Time considerations for 1-address machines](./src/times_1_addr_computers.md)
-
-- [In depth timing circuit](./src/timing_circuit.md)
 
 - [Temporal classes](./src/temporal_classes.md)
 
