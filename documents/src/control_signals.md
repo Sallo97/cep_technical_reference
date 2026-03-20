@@ -1,13 +1,13 @@
-# Control Signals [[1](../0_Additional_resources/0_reference.md)]
-In a computer architecture a Control Signal is an electrical level (i.e. a steady voltage) that is sent to the **control input** of a logic gate or a registe. Its signal orchestrates in the component the movement and processing of data for:
+# Control signals [[1](../0_Additional_resources/0_reference.md)]
+In a computer architecture a control signal is an electrical level (i.e. a steady voltage) that is sent as input of a logic gate or a register. Its signal orchestrates in the component the movement and processing of data.
 
 - **When the signal is 0 (False):** the gate is closed, stopping data from moving even if it is waiting on the input wires. 
 
 - **When the signal is 1 (True):** the gate is opened and data can flow from the source to the destination.
 
-Abstractly a control signal can be thought as the concrete implementation of a command in the architecture.
+Control signals can be thought as the physical implementation of a command in the architecture. [[1](../helper_resources/reference.md)]
 
-Matrix $MC$ is the matrix generating control signals from the output of the decoder $DC$. Its control signals are responsible for implementing concretely the execution of micro-operations. They can be classified in four categories:
+Matrix $MC$ is the matrix generating control signals from the output of the decoder $DC$. Its control signals are responsible for implementing physically the execution of micro-operations. They can be classified in four categories:
 
 1. Signals intersected by matrices $I$ and $II$, representing the addresses $\mu_1$ and $\mu_2$ of the next micro-order entering the switching circuit $K_0$. 
 
@@ -20,8 +20,8 @@ Matrix $MC$ is the matrix generating control signals from the output of the deco
     - **unconditional**.
 
 1. Signals controlling the **timing** of the computer. This group is divided in two sub-groups:
-    - $x_{c_1}$ determining the **operative cycle**, i.e. the total time required to execute a single, complete micro-instruction..
+    - $x_{c_1}$ determines the **operative cycle**, i.e. the time required to execute a single, complete micro-instruction..
 
-    - $x_{c_2}$ selecting the register to which pulses are to be sent.
+    - $x_{c_2}$ selecting the register where to send the pulses.
 
-    Both sub-groups may include condition or unconditional signals.
+Both sub-groups may include condition or unconditional signals.[[1](../helper_resources/reference.md)]

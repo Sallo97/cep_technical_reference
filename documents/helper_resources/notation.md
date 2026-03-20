@@ -9,20 +9,25 @@ Style guide:
 
 # Notation
 
+## Consistent nomenclature
+- Microprogramming
+- Micro-order
+- Microinstructions
+
 ## Schematics
 
-- **Logic OR**: ![image](../resources/logic_or.svg)
+- **Logic OR**: ![image](/resources/logic_or.svg)
 
-- **Logic AND**: ![image](../resources/logic_and.svg)
+- **Logic AND**: ![image](/resources/logic_and.svg)
 
-- **Logic NOT**: ![image](../resources/logic_not.svg)
+- **Logic NOT**: ![image](/resources/logic_not.svg)
 
-- **Delay**: ![image](../resources/logic_delay.svg)
+- **Delay**: ![image](/resources/logic_delay.svg)
 
-- **Intersection**: ![image](../resources/logic_intersection.svg)
+- **Intersection**: ![image](/resources/logic_intersection.svg)
 
-- **Register**: ![image](../resources/logic_register.svg)
+- **Register**: ![image](/resources/logic_register.svg)
 
-- **Abstract Component**: ![image](../resources/logic_abstract_component.svg)
+- **Abstract Component**: ![image](/resources/logic_abstract_component.svg)
 
     Abstract components represent in a schematic a part of the architecture which we only care to show that signals goes from or to it.

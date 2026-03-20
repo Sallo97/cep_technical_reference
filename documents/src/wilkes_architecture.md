@@ -1,14 +1,12 @@
 # Stored program architecture
-The stored program architecture follows to the main principle of the Von Neumann architecture: the processor should fetch local data and program's code through the **same data-bus** pointing to the same component, the memory. 
-
-In other terms, the program's code and its local variable must be stored both in memory.
+It follows the main principle of the Von Neumann architecture: the processor should fetch local data and code through the same data-bus, i.e. they both are stored in the memory. 
 
 ![image](../../resources/stored_program_architecture.svg)
 
 # The EDSAC Computer
 Let us consider the EDSAC, which was build by Maurice Wilkes. On the experience in developing this computer and seeing similar architecture after, Wilkes will later introduce the foundamental concept of *micro-programming*.
 
-We will provide a brief description of the main components of the EDSAC computer, mainly focused on its limitations that lead Wilkes to invent micro-programming.
+We will provide a brief description of the main components of the EDSAC computer, mainly focused on its limitations that lead Wilkes to invent microprogramming.
 
 ## The EDSAC Memory 
 Memory in the EDSAC was not random-access, rather it was **sequential-access**. It was structured as a series **mercury delay lines**, that is a series of long tubes filled with mercury.
@@ -20,7 +18,7 @@ The machine is composed of several delay lines, each containing multiple memory 
 Thus to retrieve that word we need to wait until it passed physically inside the output transducer. This necessity to wait is why the access is sequential.
 
 ## Order Interpreter
-It is responsible for decoding a given macro-order into the associated micro-program. His role analoguos to the Instruction Decoder. During execution it receives the opcode as input, it then decodes it to *"understand"* the requested operation. Then these produced output lines will be encoded to determine the necessary control signals. 
+It is responsible for decoding a given macro-order into the associated micro-program (his role is analoguos to the Instruction Decoder). During execution it receives the operation code as input, it then decodes it to *"understand"* the requested operation. Then these produced output lines will be encoded to determine the necessary control signals. 
 
 The concrete implementation for transforming the input to the associated control signals can be represented as a regular circuit called the **diode matrix**. 
 
@@ -42,9 +40,9 @@ A conditional control signal is a signal whose activation depends on some condit
 ## EDSAC Execution
 The EDSAC execution consisted of two stages. The initiation of both stages were effected by control signals.
 
-1. An instruction is transferred from a location in memory to the instruction register. The instruction is determined by the content in the Program Counter. The operation is carried by the control signals C2 (of the main unit), C13 and C14 (of the instruction decoder).
+1. An instruction is transferred from a location in memory to the instruction register. The instruction is determined by the content in the Program Counter. The operation is carried by the control signals $C_2$ (of the main unit), $C_{13}$ and $C_{14}$ (of the instruction decoder).
 
-2. The produced control signals from stage 1 are issued, causing the instruction in the instruction register to be distribuited among the opcode/function register and the operand-address/location register. The content of these register is decoded and transformed into control signals according to the particular instruction being issued.
+2. The produced control signals from the previous stage are issued, causing the instruction in the instruction register to be distribuited among the opcode/function register and the operand address/location register. The content of these register is decoded and transformed into control signals according to the particular instruction being issued.
 
 In both stages control signals produced by different sources needs to be issued in the proper temporal order. Also depending on the instruction, the control signals sequence may vary. **The same control signal can be issued in both stages, determining a different behavior of the machine**. 
 All these constrains make the control unit of the EDSAC complex and irregular.
@@ -58,11 +56,11 @@ The Arithmetic Unit in the EDSAC was serial. Wilkes however found out by visitin
 ![image](../../resources/edsac_architecture.png)
 
 # Micro-programming
-Looking at the structure of the memory unit in the EDSAC, which was basically a sequence of memory word, Wilkes realized that the Main Control Unit (MCU, basically the mai processor) can be interpreted analoguously as a sequence of micro-instructions. These micro-instruction can be composed to make a complete instruction of the MCU.
+Looking at the structure of the memory unit in the EDSAC, which was basically a sequence of memory word, Wilkes realized that the Main Control Unit can be interpreted analoguously as a sequence of microinstructions. These microinstruction can be composed to make a complete instruction of the MCU.
 
 Wilkes defines complexity in computer architecture as the extent to which cross-connections between the various units obscures their logical inter-relation. Simple logical structure leads to more mantainable machines.
 
-The idea behind micro-programming is the define each machine level instruction of the *Order Code* as an high-level instruction called a **macro-order**. A macro-order is implemented as a **micro-program**: an ordered sequence of lower-level commands, called **micro-instructions**. 
+The idea behind microprogramming is the define each machine level instruction of the *Order Code* as an high-level command called a **macro-order**. A macro-order is implemented as a **microprogram**: an ordered sequence of lower-level commands, called **micro-instructions**. 
 
 A microinstruction is typically much simpler and more granular than the usual machine code, controlling the individual steps of executing machine-level instructions
 
@@ -84,8 +82,8 @@ These micro-operations are represented in binary as micro-code, which is stored 
 The micro-programming control unit (MCU) is the concrete implementation of the micro-programming idea.  
 
 The main structure consists of two diode matrices:
-1. Matrix **A**: stores the control signals.
-2. Matrix **B**: stores the address and control the selection of which control signals to issue over time.
+- Matrix **A**: stores the control signals.
+- Matrix **B**: stores the address and control the selection of which control signals to issue over time.
 
 Each horizontal line in matrix **A** stores the control signals to be issued. Each vertical line of the matrix **A** transmits a particular control signal to be issued at a given time, determined by the appropriately placed diodes. 
 
@@ -97,10 +95,10 @@ Recall that the execution of an instruction is divided in phases:
 
 3. The produced output is a **micro-instruction**, that is *"what should be done at the current phase to complete the requested instruction"*. 
 
-4. The output of matrices A and B which is combine to define a **micro-order**. It is the actual operation (concretely represented as a set of appropriately active control-signals) that the architecture must execute to realize the micro-instruction. 
+4. The output of matrices A and B is combined to define a **micro-order**, i.e. the actual operation represented as a set of appropriately active control-signals. 
 
 ## Diode Matrix
-An array of horizontal and vertical wires, where the horizontal are the inputs of the circuit and the vertical are the outputs of the circuit. The points of intersection between horizontal al vertical wires are sites for diodes. The diode has the role of transmitting the value of the crossed wired input to the corresponding wired output.
+An array of horizontal and vertical wires, where the horizontal are the inputs of the circuit and the vertical are the outputs of the circuit. The points of intersection are realized through diodes. Their role is to transmit the value of the crossed wired input to the corresponding wired output.
 
 The diode matrix can be used for the encoder of the Order Interpreter, that is from the decoded opcode lines it can be use to determine the control signals. This approach is used in the EDSAC and guaranteed regularity in the encoder implementation.
 

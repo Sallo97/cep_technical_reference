@@ -1,19 +1,14 @@
-# Combinatorial & Sequential Circuits A, B, C [[1](../0_Additional_resources/0_reference.md)]
+## Combinatorial and sequential circuits
 A **Combinatorial Circuit** is one in which the output depends only on the current input. **It has no memory**.
 
 A **Sequential Circuit** is one in which the output depends on the current inputs plus the previous state. **It has memory**.
 
-In practice there could not exist a purely combinatorial or purely sequential circuit.
+# Combinatorial and sequential circuits $A$, $B$, $C$ 
+The combinatorial and sequential circuits $A, B, C$ (not to be confused with registers $A$, $B$, and $C$ of the Arithmetic Unit) situated in the microprocessing control unit (MCU) determine the current value for registers and coordinate the micro-program in execution. [[1](../helper_resources/reference.md)]
 
-In the CEP, the **Combinatorial & Sequential Circuits** in the **central processing unit (CPU)** $A,B,C$ manage information flow inside the Micro-programming Control Unit (MCU), determining the current value for registers and coordinate the micro-program in execution.
+These units are described as being both combinatorial and sequential because a block of logic gates compute the *"next state"* based on current inputs, and the *"retention of information"* is delegated to an attached register. [[1](../helper_resources/reference.md)]
 
-These units are described as being both combinatorial and sequential because:
-
-- A block of logic gates compute the *"next state"* based on current inputs.
-
-- The *"retention of information"* is delegated to an attached register.
-
-During execution the register hold the value of the previous state and feeds it back into the combinatorial logic input. The computed next state will update the register's content.
+During execution, the register of one of these circuits hold the value of the previous state and feeds it back into the combinatorial logic input. The computed next state will update the register's content. [[1](../helper_resources/reference.md)]
 
 
 Before explaining the structure, we provide some nomenclature:
@@ -28,13 +23,12 @@ Before explaining the structure, we provide some nomenclature:
 
 ![image](../../resources/sequential_circuits.png)
 
-
 ## Circuit and register communication
-Each combinatorial-sequential circuit pair operates using the same logic. To illustrate it, we will examine circuit $A$ and its associated register $R_k$.
+Each circuit-register pair operates using the same logic, to illustrate it, we will examine circuit $A$ and its associated register $R_k$.
 
 During the determination of the next state, circuit $A$ generates output signal $Y_k^{(p)}$, representing the next value of register $R_k$. When the timing pulse $P_k$ arrives, the input gates of register $R_k^{(p)}$ open, allowing it to capture and store the new value. 
 
-The stored value is then emitted as the "current state" signal, first processed by the delay component $d$ on order to ensure no race condition happens. It eventually reaches the circuit inputs as $y_k^{(p)}$.
+The stored value is then emitted as the *"current state"* signal, first processed by the delay component $d$ on order to ensure no race condition happens. It eventually reaches the circuit inputs as $y_k^{(p)}$. [[1](../helper_resources/reference.md)]
 
 ## Inputs
 For each circuit their **previous state** $y_x^{(p)}$ and the signals $x^{(p)}$ are used as inputs.

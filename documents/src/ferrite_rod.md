@@ -1,7 +1,7 @@
 # The Ferrite Rod Store Technique
-The Ferrite Rod Store Technique, also called Fixed Store or Slug Store was a Read-Only Memory (ROM) technology developed to solve the gap in speed between the CPU's logic gates and the much slower memory systems.
+The **Ferrite Rod Store Technique** (also called **Fixed Store** or **Slug Store**) was a Read-Only Memory (ROM) technology developed to solve the gap in speed between the CPU's logic gates and the much slower memory systems.
 
-This technology was first introduced by the Manchester Atlas computer in 1962. It was used to hold the **Extracodes** (the equivalent of the CEP's pseudoinstructions) and the supervisor code.
+This technology was first introduced by the Manchester Atlas computer in 1962. It was used to hold the **extracodes** (very similar to the CEP's pseudoinstructions) and the *supervisor code*.
 
 The technique relies on **inductive coupling** (i.e. to let electrical energy jump from one wire to another without the need for them to touch) between two sets of wires: *drive wires* and *sense wires*. The wires are arranged in a perpendicular grid, referred to as a *mesh*. 
 

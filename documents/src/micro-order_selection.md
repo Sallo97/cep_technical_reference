@@ -1,137 +1,128 @@
-# Micro-Order Selection [[1](../0_Additional_resources/0_reference.md)]
-The **Micro-programming Control Unit** (MCU) of the Calcolatrice Elettronica Pisana (CEP) is the most important component of the architecture, following the principles established by Wilke. In this design, high-level machine instructions, also indicated as **macro-instruction**, are concretely implemented in the architecture as a sequence of lower-level **micro-instruction**.
+# Micro-Order Selection
+The **Microprogramming Control Unit** (MCU) of the Calcolatrice Elettronica Pisana (CEP) is the most important component of the architecture. Its design follows the principles established by Wilkes, where machine instructions are executed as a sequence of lower-level **microinstructions**. [[1](../helper_resources/reference.md)]
 
-Each micro-instruction serves two purposes:
+Each microinstruction serves two purposes:
 
-1. Determine which logical *"gates"* to open and close in the CPU, directing the flow of data through the processor to perform specific tasks.
+1. Determine which logical *"gates"* to open and close in the CPU, directing the flow of data through the computer to perform specific tasks.
 
 1. Providing the address of the next micro-instruction to execute, allowing for conditional branching and loops within the control logic.
 
 ## Micro-Orders and Micro-Operations
 
-- **Micro-Orders**: the **functional components** of a micro-instruction, indentifying the physical **control signals (i.e. electrical pulses)** emitten by the MCU's diode matrices when executing it.
+**Micro-Orders** are the **functional components** of a micro-instruction, they determine the control signals (i.e. the physical electrical pulses) emitted by the MCU's diode matrices during execution. [[1](../helper_resources/reference.md)]
 
-- **Micro-Operations:** physical events in the hardware that occur when a micro-order is received.
+**Micro-Operations:** are the physical events in the hardware that occur when a micro-order is received.
 
-A micro-instruction is a collection of micro-orders that work together to trigger the necessary micro-operations within a single operative cycle.
+A microinstruction is a collection of micro-orders that work together to trigger the necessary micro-operations within a single operative cycle. [[1](../helper_resources/reference.md)]
 
 ### Example
 
-Recall that the CEP is a 1-address machine, i.e. the user can specify the address for only **one** operand. 
+Recall that the CEP is a 1-address machine, i.e. the user can specify the address for only **one** operand.  Consider a simple **ADD** instruction involving an explicit integer constant and an implicit value in a register. First, the machine needs to retrieve the instruction and initialize its microprogram. This is the **Fetch Phase**, which is implemented in the MCU as a micro-program itself. The phase also copies the integer constant from main memory into the **Memory Buffer Register** $Z$.
 
-Consider a simple **ADD** instruction involving an explicit integer constant (provided by the user as an address in memory) and an implicit value in a register (usually the **Accumulator**).
+The computer then passes to the **Execution Phase**, which executes the command. A simple addition seems trivial, but it can be broken down into elementary steps:
 
-First the machine needs to retrieve the instruction and initialize its micro-program (i.e. the sequence of micro-instructions implementing it).
-This is executed by the **Fetch Phase**, which in the micro-programming control unit is a micro-program itself. The phase also copies the integer constant from main memory into the **Memory Buffer Register**.
-
-Retrieved the micro-program, the computer passed to the **Execution Phase**, which consists in executing it. Today doing a simple addition seems trivial, but it still can be broken down into elementary steps:
-
-1. Opening the path to move the constant from the Memory Buffer Register to the ALU input.
+1. Opening the path to move the constant from the Memory Buffer Register $Z$ to the ALU input.
 
 1. Signaling the ALU to perform the addition with the value already held in the Accumulator.
 
-1. Branching the micro-sequence back to Fetch Phase micro-program to retrieve the next machine-level command.
+1. Branching the microsequence back to fetch phase microprogram to retrieve the next machine-level command.
 
 ## Determining the next micro-instruction
 As we have said, a micro-instruction is responsible for both executing an elementary step of a high-level machine-instruction and determing the next micro-instruction to execute.
 
-Below we provide a schematic of the MCU, focussed on this particular problem:
+Below we provide a schematic of the MCU:
 
 ![image](../../resources/cep_maincontrolunit.svg)
 
 ## Register $0$
-Register $0$ contains the address of the next **micro-instruction** to execute. 
+Register $O$ contains the address of the next **micro-instruction** to execute. [[1](../helper_resources/reference.md)] 
 
 ## The Decoder $DC$
-Receives as input the **micro-instruction** from register $0$ which transforms as the associated **micro-operation**, i.e. the set of control signals concretely implementing the request.
+Receives as input the **micro-instruction** in register $O$, which decodes into the associated **micro-operation**. [[1](../helper_resources/reference.md)] 
 
 ## The Matrix $MC$
-The Matrix $MC$ distributes the control signals representing the micro-operation across the architecture. 
+The Matrix $MC$ distributes the generated control signals across the architecture. [[1](../helper_resources/reference.md)]  
 
 ### Micro-instruction matrices
-The MCU can be abstracted as a set of smaller matrices, each having a particular role in the determination of the next micro-instruction:
+The main matrix can be abstracted as a set of smaller matrices, each having a particular role:
 
 - **Matrix I:** its horizontal lines determine the **unconditional address instruction** $\mu_1$, the default one to pick.
 
 - **Matrix II:** its horizontal lines determine the **conditional address** $\mu_2$, selected only when a given condition is valid.
 
-The vertical lines of both matrices will determine the control signals used to decide the next address among the possible choices.
+The vertical lines of both matrices will determine the control signals used to decide the next address among the possible choices. [[1](../helper_resources/reference.md)] 
 
 ### Control circuits $K_1$, $K_2$ and $K_3$
-Three Parallel AND-OR switching circuits will instrument the control signals responsible in determing which address will be picked for the next micro-instruction.
+$K_1, K_2, K_3$ are three switching circuits responsible for instrumenting the control signals determing the next microinstruction to execute. [[1](../helper_resources/reference.md)] 
 
-$K_1$ will decide which address should be picked between $\mu_1$ and $\mu_2$.
+- $K_1$ decides which address should be picked between the conditional or unconditional address $\mu_1$ and $\mu_2$.
 
-$K_2$ decides if the special address $\epsilon_0$ should be picked.
+- $K_2$ determines if the special address $\epsilon_0$ should be chosen.
 
-![image](../../resources/k2_circuit.svg)
+- $K_3$ implements the special case in which we need to repeat the previous micro-intruction. When set, it discards the output produced by $K_0$ and the microinstruction register $O$ keeps the previous address, named $\mu_0$.
 
-$K_3$ implements the special behaviour for **repeating the previous micro-intructions**. When set, the output produced by $K_0$ is discarded and and the program counter keeps the previous address, indicated as $\mu_0$. 
-
-$K_1$ and $K_3$ share the same structure:
+    Construction-wise, $K_1$ and $K_3$ share the same logical structure.
 
 ![image](../../resources/k1_k3_circuit.svg)
 
-**NOTE:** In the diagram of all circuits there could be more than two vertical conditions.
+![image](../../resources/k2_circuit.svg)
 
 ### Branching circuit $K_0$
-The next micro-instruction is decided by the parallel AND-OR switching circuit $K_0$ between:
+The output produced by $K_1$ and $K_2$ are fed into switching circuit $K_0$. The possible candidates for the next microinstruction are:
 
 - the **unconditional address** $\mu_1$. 
 
 - the **conditional address** $\mu_2$.  
 
-- the **termination address** $\epsilon_0$ = 111 $\ldots$ 1, which is always the last step of every micro-program. It is the address of the micro-program $E_0$, pointing to the start of the Fetch Phase micro-program.
+- the **termination address** $\epsilon_0$ = 111 $\ldots$ 1. It is the address of the microprogram $E_0$, pointing to the start of the fetch phase microprogram and for this reason is always the last step of every micro-program.
 
-- the **previous address** $\mu_0$, indicating that the computer must execute the same operation.
+- the **previous address** $\mu_0$, indicating that the computer must repeat the previous micro-operation.
 
-- the **starting address** $m$, pointing to the first micro-instruction of the macro-program associated to the current instruction to execute. This address is setted at the end of the Fetch Phase to **move into the Execution Phase**.
+- the **starting address** $m$, pointing to the first microinstruction of the current instruction to execute. This address is setted at the end of the fetch phase.
  
-The decision is determined by the control signals $k_1$, $k_2$, and $c_1$ according to the following rules:
+The logic rules for choosing the next microinstruction depends on control signals $k_1$, $k_2$, and $c_1$ and are:
 
-- if $k_1$ = 0  $\land$ $c_1$ = 0 $\rightarrow$ $\mu_1$ 
+| $k_1$ | $k_2$ | $k_3$ | $c_1$ | microinstruction picked |
+| ----- | ----- | ----- | ----- | ----------------------- |
+| $0$   | /     | /     | $0$   | $\mu_1$                 |
+| $1$   | /     | /     | $0$   | $\mu_2$                 |
+| $0$   | /     | /     | $1$   | $m$                     |
+| /     | $1$   | /     | /     | $\epsilon_0$            |
+| /     | /     | $1$   | /     | $\mu_0$                 |
 
-- if $k_1$ = 1 $\land$ $c_1$ = 0 $\rightarrow$ $\mu_2$
-
-- if $k_1$ = 0 $\land$ $c_1$ = 1 $\rightarrow$ $m$
-
-- if $k_2$ = 1 $\rightarrow$ $\epsilon_0$ 
-
-- if $k_3$ = 1 $\rightarrow$ $\mu_0$
+Where "/" indicates that the value of that circuit can be whatever.
 
 **NOTE:** In some documents the control signals $k_1, k_2, k_3$ are also referred as $m_1, m_2, m_3$.
 
-If multiple addresses are eligible, the following priority hierarchy decides the one selected, form less important, to more important:
+When multiple addresses are eligible, the following priority hierarchy is used to decide which signal to select (it is ordered form less important, to more important):
 
 $\mu_1 \prec \mu_2 \prec \epsilon_0 \prec \mu_0$ 
 
-For example, if the considitions for $\mu_2, \epsilon_0, \mu_0$, are all valid, among them $\mu_0$ is **always** selected.
+For example, if the conditions for $\mu_2, \epsilon_0, \mu_0$, are all valid, among them $\mu_0$ is **always** selected. [[1](../helper_resources/reference.md)]
 
 A possible diagram of the $K_0$ is the following:
 
 ![image](../../resources/k0_circuit.png)
  
 # General Case
-A general scheme is also considered, where one of four addresses $\mu_1, \mu_2, \mu_3, \mu_4$ may occur at the end of a micro-operation, but contrary to the previous approach they can select any micro-order.
+In paper [[1](../helper_resources/reference.md)] a generalization of the microinstruction selection approach has been proposed. For completion sake we illustrate it. Here, four addresses are considered $\mu_1, \mu_2, \mu_3, \mu_4$. Each address may occur at the end of a micro-operation, but contrary to the previous approach they can select any micro-order.
 
-Below we provide a schematic:
+Below a schematic of this scenario.
 
 ![image](../../resources/general_micro-order_selection.png)
 
 ## Address selection
-At the start of a micro-program, register $0$ will always retrieve the first address from Main Memory.
+At the start of a micro-program, register $O$ will always retrieve the first address from Main Memory.
 
-Circuits $K_1^{'}$ and $K_2^{'}$ are **identical** to $K_1$ and $K_3$ of the previous configuration. Their produced outputs $k_1^{'}$ and $k_2^{'}$ are passed as input to decoder $DF$.
+Circuits $K_1^{'}$ and $K_2^{'}$ are **identical** to $K_1$ and $K_3$ of the previous configuration. Their produced outputs $k_1^{'}$ and $k_2^{'}$ are passed as input to decoder $DF$. $DF$ decodes these signals to select one of the four possible addresses ($\mu_1, \mu_2, \mu_3, or \mu_4$). The picked address is forwarded to $K_0$.
 
-$DF$ decodes these signals to select one of the four possible addresses ($\mu_1, \mu_2, \mu_3, or \mu_4$). The picked address is forwarded to $K_0$.
-
-When the control signal $c_1$ is asserted (i.e. set to $1$), it inhibits the $DF$ decoding process, forcing it to output $0$. $K_0$ interprets this special address as a **request to fetch the new address from Main Memory**.
+When the control signal $c_1$ is asserted (i.e. set to $1$), it inhibits the $DF$ decoding process, forcing it to output $0$. $K_0$ interprets this special address as a request to fetch the new address from Main Memory.[[1](../helper_resources/reference.md)]
 
 ## Micro-Program Sequence
-In a micro-program, the entry-point address **dictates the whole execution path of it**. The sequence needs to be thought out by the computer right from the start, considering all possible branches and conditional jumps from the outset. This is because in register $0$ the first micro-instruction will be overwritten with the address of the next one, so we cannot use it anymore.
+In a microprogram, the entry point address dictates the whole execution path. The sequence needs to be thought out by the computer right from the start, considering all possible branches and conditional jumps from the outset. This is because in register $O$ the first microinstruction will be overwritten with the address of the next one, so we cannot use it anymore.
 
 ### Handling Branching
-Consider the case where the architecture is executing micro-order $a$ of sequence $s^{'}$. This operation jumps to another sequence $s^{''}$ of micro-order $b$, which can be the beginning of another micro-program or an operation in-between. 
+Consider the case where the architecture is executing micro-order $a$ of sequence $s^{'}$. This operation jumps to another sequence $s^{''}$ of micro-order $b$, which can be the beginning of another microprogram or an operation in-between. 
 
 The computer needs to execute only a portion of $s^{''}$, up until a generic micro-instruction $M_u$. Reached $M_u$ the hardware should be able to exit from $s^{''}$ and automatically jump back to $s^{'}$ or to a whole new sequence $s^{'''}$.
 
@@ -145,7 +136,7 @@ There are two solutions to this problem:
 
     Register $O^{'}$ will output signals $\alpha_1$ and $\alpha_2$, corresponding to the two least significant bits of the original code. The conditions are by $K_1^{'}$ and $K_2^{'}$ for implementing the fictituous branch of $s^{''}$.
 
-Solution $2$ is the better approach, allowing for a single shared sequence $s^{''}$ to be utilized by multiple different parent sequences, each providing its own *"return coordinates"* via register $O^{'}$.
+Solution $2$ is the better approach, allowing for a single shared sequence $s^{''}$ to be utilized by multiple different parent sequences, each providing its own *"return coordinates"* via register $O^{'}$. [[1](../helper_resources/reference.md)]
 
 ### Branch Conditions
 Conditions $\alpha_1, \alpha_2, \alpha_3, \ldots, \alpha_n$ are send to $K^{'}$ and $K^{''}$ to let the architecture handle branching. More specifically we will refer to them as:
@@ -216,5 +207,5 @@ Assuming:
 
 At the end of a micro-order, up to three fictituous branches are possible, with addresses picked among $\{\mu_1, \mu_2, \mu_3, \mu_4\}$.
 
-Be aware that the addresses chosed by $\alpha_1^{''} \land \alpha_2^{''}$ of $s^{''}(alpha_1^{''}, \alpha_2^{''})$ belonging to $M_u$ is excluded.
+Be aware that the addresses chosed by $\alpha_1^{''} \land \alpha_2^{''}$ of $s^{''}(alpha_1^{''}, \alpha_2^{''})$ belonging to $M_u$ is excluded. [[1](../helper_resources/reference.md)]
 

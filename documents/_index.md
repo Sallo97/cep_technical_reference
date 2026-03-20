@@ -28,20 +28,18 @@ Style guide:
 
 - [Wilkes' architecture](./src/wilkes_architecture.md)
 
-- [Synchronous and asynchronous machines](./src/sync_async.md)
+- [Synchronous and asynchronous design](./src/sync_async.md)
 
 - [Micro-order selection](./src/micro-order_selection.md)
 
-- [Sequential circuits](./src/sequential_circuits.md)
+- [Microprogramming circuits A,B,C](./src/circuits_a_b_c.md)
 
 - [Control signals](./src/control_signals.md)
 
-- [Interrupts](./src/interrupts.md)
+- [I/O interrupts](./src/io_interrupts.md)
 
-- [Architecture's final schematic](./src/final_schematic.md)
 
 ## 3 - Timing system
-- [Synchronous and asynchronous design](./src/synchronous_asynchronous.md)
 
 - [Timing system](./src/timing_system.md)
 
@@ -52,6 +50,8 @@ Style guide:
 - [Temporal classes](./src/temporal_classes.md)
 
 - [Dynamic control](./src/dynamic_control.md)
+
+- [Architecture's final schematic](./src/final_schematic.md)
 
 ## 4 - Arithmetic unit
 - [Compute unit](./src/compute_unit.md)
