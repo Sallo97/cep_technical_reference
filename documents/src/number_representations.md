@@ -1,8 +1,5 @@
-# Supported numbers [[9](../0_Additional_resources/0_reference.md)]
-The CEP supports a variety of number types.
-
-## Integer numbers
-An integer number $x$ occupies a memory word, i.e. $x = x_0x_1x_2\ldots x_{35}$, ranging in-between $-34359738367 \leq x \leq +34359738367$. 
+# Integer numbers
+An integer number $x$ occupies a memory word, i.e. $x = x_0x_1x_2\ldots x_{35}$, ranging in-between $-34359738367 \leq x \leq +34359738367$. [[9](../helper_resources/references.md)]
 
 The first bit $x_0$ determines the sign of the number:
 
@@ -15,7 +12,7 @@ The remaining 35 bits specify the value of the number according to the following
 $x_1 \times 2^{34} + x_2 \times 2^{33} + \ldots + x_{35} * 2^{0}$
 
 ## Fixed Point Numbers
-Fixed point numbers can be both in **simple precision** or **double precision**.
+Fixed point numbers can be both in **simple precision** or **double precision**. [[9](../helper_resources/references.md)]
 
 ### Simple Precision Fixed Point Numbers
 Simple precision fixed point numbers occupy one memory word, i.e. $x = x_0 x_1 x_2 \ldots x_{35}$ with the value ranging in-between $-1 \leq x < 1$. 
@@ -32,10 +29,12 @@ The sequence of bits is interpreted as:
 $- x_0 \times 2^0 + x_1 \times 2^{-1} + x_2 \times 2^{-2} + \ldots + x_{35} \times 2^{-35} + x_{36} \times 2^{-36} + \ldots + x_{70} \times 2^{-70} $
 
 ## Floating Point Numbers
-Floating point numbers can be both **simple precision** or **double precision**.
+Floating point numbers can be both **simple precision** or **double precision**. [[9](../helper_resources/references.md)]
+
 
 ### Simple Precision Floating Point Numbers
-Simple precision floating point numbers occupy one memory word, i.e. $x = x_0 x_1 x_2 \ldots x_{35}$. 
+Simple precision floating point numbers occupy one memory word, i.e. $x = x_0 x_1 x_2 \ldots x_{35}$. [[9](../helper_resources/references.md)]
+
 
 Their value is defined as $x = x_f \times 2^{x_e}$ where $x_f$  is the **fractional part** and $x_e$ is the **exponent**.
 
@@ -65,7 +64,8 @@ The value can range in between $-128 \leq x_e \leq 127$ with $x_e = -128$ when $
 
 
 ### Double Precision Floating Point Numbers
-Double precision floating point numbers occupy **two memory words**, i.e. $y = y_0 y_1 y_2 \ldots y_{35} \ 0 \ y_{36} y_{37} \ldots y_{70}$. 
+Double precision floating point numbers occupy **two memory words**, i.e. $y = y_0 y_1 y_2 \ldots y_{35} \ 0 \ y_{36} y_{37} \ldots y_{70}$.  [[9](../helper_resources/references.md)]
+
 
 Their value is defined as $y = y_{f} \times 2^{y_e}$  where $y_f$ is the **fractional part** and $y_e$ is the **exponent**.
 

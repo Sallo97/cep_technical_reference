@@ -106,3 +106,8 @@ $\sigma \sigma \ldots \sigma \ dd \ldots d \ . \ dd \ldots d \ E \ \sigma dd$ wh
 - $E$ the (optional) part of the exponent part, which has always two digits. If the digits are missing, they are interpreted as zeroes.
 
 All trailing zeroes of the binary number are translated in spaces. Rounding up is applied if the original binary number exceeded the general form of the output.
+
+# Compilatore dei nastri di gruppo delle pseudoinstructions (CONGBX) [[7](../0_Additional_resources/0_reference.md)]
+During the assembly phase we need to load the routines used by the pseudoinstructions in the program. The process of translating to binary the requested routines is handled by the Compilatore dei nastri di Gruppo delle pseudoinstructions (CONGBX for short).
+
+For each group CONGBX retrieves the associated routines, translates them into binary and mount them over a magnetic tape.

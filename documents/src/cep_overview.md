@@ -1,13 +1,13 @@
-# CEP Overview [[9](../0_Additional_resources/0_reference.md)]
+# CEP Overview 
 
-The CEP was a digit-based parallel binary computer mainly designed for scientific problems. It's design has strong similarity to the [Atlas computer developed at the University of Manchester](https://curation.cs.manchester.ac.uk/atlas/).
+The CEP was a digit-based parallel binary computer mainly designed for scientific problems. It's design has strong similarity to the [Atlas computer developed at the University of Manchester](https://curation.cs.manchester.ac.uk/atlas/).[[9](../helper_resources/references.md)]
 
 It had a parallel binary architecture with fixed 36-bit word length, and supported both fixed point and floating point arithmetics.
 
 ## General Structure [[9](../0_Additional_resources/0_reference.md)]
 
 ### Arithmetic Unit
-The unit responsible for all arithmetic computations. It supports both fixed point and floating point arithmetics.
+The unit responsible for all arithmetic computations. It supports both fixed point and floating point arithmetics. [[9](../helper_resources/references.md)]
 
 Its main components are:
 
@@ -23,10 +23,10 @@ Its main components are:
 Although they are not part of the arithmetic unit logic, physically are also placed:
 
 - Register $Z$, used for **retrieving data from memory**
-- The associated switching circuit $KZ$. 
+- The associated switching circuit $KZ$. [[9](../helper_resources/references.md)]
 
 ### Memory Address Unit
-The memory address unit has the responsability of both understanding the component referred by the address of instructions (e.g. register, main memory, auxiliary memory, etc...) and to retrieve the data from it.
+The memory address unit has the responsability of both understanding the component referred by the address of instructions (e.g. register, main memory, auxiliary memory, etc...) and to retrieve the data from it. [[9](../helper_resources/references.md)]
 
 The addresses are 15 bit wide.
 
@@ -42,18 +42,18 @@ It has the following components:
 
 - The **adder** $AJ$.
 
-- Switching cirucits $KN, KR, KL, KK, KI$.
+- Switching circuits $KN, KR, KL, KK, KI$.
 
 ### Memory
-The CEP's memory is divided into a *faster* **main memory** (constructed as a **magnetic core memory**) storing up to $8192$ words and access time of $5,5 \mu s$; and a *slower* **auxiliary memory** (in the form of a **magnetic drum**) of $16384$ words and access time of $10ms$.
+The CEP's memory is divided into a *faster* **main memory** (constructed as a **magnetic core memory**) storing up to $8192$ words and access time of $5,5 \mu s$; and a *slower* **auxiliary memory** (in the form of a **magnetic drum**) of $16384$ words and access time of $10ms$. [[9](../helper_resources/references.md)]
 
 #### Main Memory Unit
-The main memory is divided into **two magnetic core groups**. Each group contains $4096$ cores, distributed among $36$ planes. The access time is of $10 \mu sec$ [[11](../0_Additional_resources/0_reference.md)]. 
+The main memory is divided into **two magnetic core groups**. Each group contains $4096$ cores, distributed among $36$ planes. The access time is of $10 \mu sec$ [[11](../helper_resources/references.md)]
 
-To allow memory access operations it employs a **Coincident-Current Driving System** using linear transformer matrices and reading circuits, inhibit circuits, and pre-drive circuits. Also to synchronize the access with the rest of the architecture, it used delay lines for determining timing pulses for register $Z$ and its switching circuit $DZ$.
+To allow memory access operations it employs a **Coincident-Current Driving System** using linear transformer matrices and reading circuits, inhibit circuits, and pre-drive circuits. Also to synchronize the access with the rest of the architecture, it used delay lines for determining timing pulses for register $Z$ and its switching circuit $DZ$. [[9](../helper_resources/references.md)]
 
 #### Auxiliary Memory Unit
-The auxiliary memory is a magnetic drum, having control circuit $TM$ for both reading and writing using characters of 6-bit (+1 parity bit). It was possible to transfer from or to it both single memory word or contiguous blocks of memory words of dynamic length.
+The auxiliary memory is a magnetic drum, having control circuit $TM$ for both reading and writing using characters of 6-bit (+1 parity bit). It was possible to transfer from or to it both single memory word or contiguous blocks of memory words of dynamic length. [[9](../helper_resources/references.md)]
 
 ### Control Unit
 The control unit is responsible for orchestrating the execution. It is based upon Wilkes' micro-program design. Physically it is constructed as a **Manually Programmable Read Only Memory** (MPROM). 
@@ -108,8 +108,8 @@ Supply voltage from $-150V$ to $+250V$ in $50V$ steps.
 
 The whole CEP required a stedy 80KWatt.
 
-The main magnetic core memory has $8192$ words; the auxiliary memory is composed of a magnetic drum with $15.384$ words and $8$ magnetic tape units. [[8](../0_Additional_resources/0_reference.md)]
+The main magnetic core memory has $8192$ words; the auxiliary memory is composed of a magnetic drum with $15.384$ words and $8$ magnetic tape units. [[8](../helper_resources/references.md)]
 
-Each instructions occupies a full word, with a single address doubly modifiable by means of memory cells, called **parametric cells**. [[8](../0_Additional_resources/0_reference.md)]
+Each instructions occupies a full word, with a single address doubly modifiable by means of memory cells, called **parametric cells**. [[8](../helper_resources/references.md)]
 
-There are $128$ instructions and $219$ **pseudo-instructions** which refer to arbitrary closed subroutines. Input programs are loaded as paper table, while the output can be generated through a typewriter or paper tape or a printer. [[8](../0_Additional_resources/0_reference.md)]
+There are $128$ instructions and $219$ **pseudo-instructions** which refer to arbitrary closed subroutines. Input programs are loaded as paper table, while the output can be generated through a typewriter or paper tape or a printer. [[8](../helper_resources/references.md)]

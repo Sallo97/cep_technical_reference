@@ -1,34 +1,34 @@
-# General notation[[11](../0_Additional_resources/0_reference.md)]
-Here are shown all the symbols and notation used to describe the instructions. Specific notations for particular group of instructions are provided at the beginning of their section.
+# General notation [[11](../helper_resources/references.md)]
+We show all the common symbols used for describing the actions done by instructions. Additional specifications are given for any particular at the beginning of their section.
 
-- $A$ and $B$ are the two **arithmetic registers**, each occupying a memory word (i.e. $36$-bits).
+- $A$ and $B$ are two **arithmetic registers**, mainly used as accumulators, each occupying a memory word (i.e. $36$-bits).
 
-- $H^0$ and $H^1$ are the two **parametric registers**, each occupying 15-bits (i.e. an address).
+- $C$ is the **address register**, i.e. a 15-bit register containing the instruction address.
 
-- $N$ is the **instruction counter** (also called the **numerator**). It provides to the Control Unit the address of the instruction to execute. Excepts for jumps, at the end of each instruction its content is always incremented by $1$. Jumps will update the content altogether.
+- $P$ and $Q$ are the parametric cell referred by $s_p$ and $s_q$.
+
+- $H^0$ and $H^1$ are the two **parametric registers**, each occupying 15-bits (i.e. an address). They store the start address in the current program of their respective parametric group.
+
+- $o$ is the **memory cell** pointed by the final operand address of the instruction.
+
+- $Z$ is a word register storing the content of entry $o$.
+
+- $N$ is a register storing an address and works as the **instruction counter** (also called the **numerator**), pointing to the instruction to execute. Excepts for jumps, at the end it is always incremented by $1$. Jumps will update the content altogether.
 
 - $G$ is a **flag register** (in italian *"indicatore"*), i.e. a 1-bit register used for checking possible overflows.
 
-- $\tau$ is the **overflow value** of an arithmetic operation between fixed numbers. 
+- $\tau$ refers to the **overflow value** of an arithmetic operation s.t.: 
 
     - if $\tau = 0 \rightarrow$ no overflow occurred.
     - if $\tau = 1 \rightarrow$ an overflow occurred.
 
-- $P$ and $Q$ are the parametric cell referred by $s_p$ and $s_q$.
-
-- $o$ is the **memory cell** referred by the final modified address of the instruction.
-
-- $Z$ is the **address' content register**, i.e. a 36-bit register containing the content of the memory cell at the instruction address.
-
-- $C$ is the **address register**, i.e. a 15-bit register containing the instruction address.
-
-- $O$ is the **micro-operation code** register, i.e. it stores the current operation code of the micro-instruction to execute.
+- $O$ is the **micro-operation code** register, i.e. it stores the current operation code of the microinstruction to execute.
 
 - We refer with the lower-case counterpart of a register\parametric cell name as its content **before** the current instruction has been executed. For example with $a$ we refer to the content of the arithmetic register $A$ before the instruction has been executed.
 
-- We refer with the lower-case counterpart of a register\divparametric cells as its content **after** the current instruction has been executed. For example with $a^{'}$ we refer to the content of the arithmetic register $A$ after the instruction has been executed.
+- We refer with the lower-case counterpart of a register\parametric cells followed by an apostrophe as its content **after** the current instruction has been executed. For example with $a^{'}$ we refer to the content of the arithmetic register $A$ after the instruction has been executed.
 
-- In the Notes of an instruction's actions, only the updated registers are specified. Any register\divcontent not writen is assumed to have stayed unchanged.
+- In the Notes of an instruction's actions, only the updated registers are specified. Any register\content not writen is assumed to have stayed unchanged.
 
 - Ordinary instructions are recognized by their mnemonics being composed only by letters, whereas special instructions are always preprended by a $\star$.
 

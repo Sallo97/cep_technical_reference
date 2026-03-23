@@ -74,7 +74,7 @@ Style guide:
 
 - [Pseudoinstructions](./src/pseudoistructions.md)
 
-- [Automated checks](./src/automated_checks.md)
+- [Controlled instructions](./src/automated_checks.md)
 
 - [Control Panel](./src/control_panel.md)
 
