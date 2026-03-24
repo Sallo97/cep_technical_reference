@@ -1,19 +1,17 @@
-# External Devices[[2]](./0_reference.md)
-The CEP's external components are:
+# External Devices
+The CEP's supports five distinct types of external components. [[2](../helper_resources/references.md)]
 
-- **Drum Memory(*tamburo* in italian)**: external data storage using punched tape (*nastri magnetici* in italian) for loading data and programs onto the CEP's main memory.
+- **Drum Memory(from the italian *tamburo magnetico*)**: the main Auxiliary Memory used for loading data and programs onto Main Memory.
 
-- **Two photoelectric sensor (*lettori fotoelettrici* in italian)**: A photoelectric sensor is a device used to determine the distance, absence, or presence of an object by using a light transmitter, often infrared, and a photoelectric receiver. 
-<!-- I am still not clear on what the CEP could do with it -->
+- **Two photoelectric sensor (from the italian *lettori fotoelettrici*)**: a device used to read from punched tapes. It interprets the content by determine the distance, absence, or presence of an object by using a light transmitter, often infrared, and a photoelectric receiver. 
 
-- **Parallel Printer (*stampante in parallelo* in italian)**: a device.
-<!-- I am still not sure on what it is. -->
+- **Parallel Printer (from the italian *stampante in parallelo*)**
 
-- **Two Perforatori veloci**: **NOT CONFIRMED, THIS IS MY THEORY**: used for writing punched tape for storing data or programs produced by the CEP. One has five channels, the other seven.
+- **Two fast puncher (from the italian *perforatore veloce*):**: used for writing punched tape. One has five channels, the other seven.
 
-- **Teleprinter (*telescriventi* in italian)**: used to send and receive text messages over a a telegraphy network.
+- **Teleprinter (from the italian *telescriventi*)**: used to send and receive text messages over a a telegraphy network.
 
-## Storing a subprogram in the *tamburo magnetico* [[5](./0_reference.md)]
-This process is automatic and only requires the starting address of the subprogram in the main memory and the starting address of the subprogramm in the magnetic tape. These information will be included by the assembler in the *liste di trasferimento* for use by the pseudoinstruction which handles calls. In case a program is in the *tamburo magnetico* the pseudoinstruction *Ricerca origine del sottoprogramma* will copy it into main memory before starting the call execution.
+## Storing programs in Auxiliary Memory
+This process is handled automatically. It only requires the start address of the program in Auxiliary Memory, and the start address fo the memory area where the program will be loaded into Main Memory. These information will be provided by the assembler in the **transfer lists**. [[5](../helper_resources/references.md)]
 
-This makes coding calls completely independent from where concretely their code is stored, since the actual loading is automated.s
+In the particular case of a program stored in the magnetic drum, the loading into main memory is handled by the pseudoinstruction  *Ricerca origine del sottoprogramma*  this makes coding independent from where the code is stored, since the actual loading is automated. [[5](../helper_resources/references.md)]
