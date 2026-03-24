@@ -1,65 +1,50 @@
-# Assemblatore CEP
-The assembly phase of a CEP program consists in merging the main program with its subprograms and pseudoistruzioni, generating the final program ready for execution.
+# CEP's assembler
+The assembly phase of a CEP program consists in merging the main code with its support subprogrms and pseudoistructions, generating the final binary executable. This phase is handled by ASSGC. The produced program can be written into either Main Memory, with eventually part of the subprograms in Auxiliary Memory, or on a punched tape. [[7](../helper_resources/references.md)]
 
-This phase is handled by the programma assemblatore ASSGC. The ASSGC has the ability to decide where to store the produced result:
+Binary punched tapes can be of two types:
 
-- load it in main memory, eventually storing part of the subprograms in the magnetic drum.
+- **absolute:** the stored addresses of instructions are always absolute. During loading this permits the CEP to retrieve subprograms and pseudoistruzioni more easily.
 
-- store it in a binary punched tape which can be automatically loaded in main memory by a single move in the control panel.
+- **invariant:** all stored addresses are relative to a parameter, which must be setted over the control panel's keyboard. This allows more flexibility of memory distribution for service programs.
 
-    The binary punched tape can be of two types:
-
-    - **absolute:** the stored addresses of instructions are always absolute. During loading this permits the CEP to retrieve subprograms and pseudoistruzioni more easily.
-
-    - **invariant:** all stored addresses are relative to a parameter, which must be setted over the control panel's keyboard.
-
-        This allows more flexibility of memory distribution for service programs.
-
-We can distinguis three types of assembly: programmed, free, and mixed.
+## Assemble process type
+We can distinguis three types for the assembly process: programmed, free, and mixed. [[7](../helper_resources/references.md)]
 
 ## Programmed assembly
-Here the programmer specify the starting addresses for each subprogram, which can be stored either in main memory or in the magnetic drum. 
-
-The order in which subprograms are loaded does not matter.
+In this mode the programmer specifies the starting addresses for each subprogram, which can be written either in Main Memory or in the auxiliary memory. Note that the order in which subprograms are loaded does not matter. [[7](../helper_resources/references.md)]
 
 ## Free assembly
-Here the assembler will decide where to store the subprograms. In this case the order in which subprograms are loaded depends on the subprograms' level. 
-
-If the ordering is not consistent, some errors can occur, causing the assembler to abort.
+In this mode the the assembler will decide where to store the subprograms. The order in which subprograms are loaded depends on the subprograms' level. If the ordering is not consistent, some errors can occur, causing the assembler to abort. [[7](../helper_resources/references.md)]
 
 ## Mixed assembly
-In this scenario the programmer can set the starting address of some subprograms, with the rest being handled by the assembler.
+In this mode the programmer can set the starting address of some subprograms, with the rest being handled by the assembler. [[7](../helper_resources/references.md)]
 
-## Schema di assemblamento
-Routines used throught the code must be provided to the assembler by writing them into the "schema di assemblamento".
+## Assembly scheme
+Routines used throught the code must be provided to the assembler by writing them into the "assembly scheme" (*from the italian "schema di assemblamento*"). It is broken in three parts. [[7](../helper_resources/references.md)]
 
-The schema di assemblamento in broken in three parts:
+1. At the start, the programmer must specify the names of the subprograms and optionally, if it wants them to be fixed, their starting addresses. For programs missing the start address, the assembler will determine it dynamically.
 
-1. At the start the programmer must specify the names of the subprograms and, if it wants them to be fixed, their starting adresses. 
+1. Specifies the start address in memory for:
+    - the group $\{H^{1}\}$ of parametric cells.
+    - the jump table containing the references to all pseudoinstructions.
+    - the reserved memory for each pseudoinstructions' code.
+    - the reserver memory for the pseudoinstructions' routines
+    - the length of shared space reserved to pseudoinstructions and subprograms.
 
-    If the start address has not been specified, the assembler will determine it dynamically.
+1. The last line of the module, the programmer must specify the groups of pseudoinstructions used throught the code.
 
-1. Specify the start address in memory for :
-    - the group $HU$ of shared celle parametriche.
-    - the jump table containing the references to all pseudoistruzioni.
-    - the reserved memory for each pseudoistruzioni' code.
-    -  the reserver memory for the pseudoistruzioni's routines
-    - the length of shared space reserved to pseudoistruzioni and subprograms.
-
-1. In the last line of the module, the programmer must specify the groups of pseudoistruzioni used throught the code.
-
-## Constructing $H0$
-When reserving memory to each subprogram, the assembler will set the start of the local group $H0$ of celle parametriche at the beginning.
+## Constructing $\{H^0\}$
+When reserving memory to each subprogram, the assembler will set the start of the their $\{H^{0}\}$ group  at the beginning.
 
 ## Assemblatore's execution
 
-1. The ASSGC starts by reading the "schema di asssemblamento" and all other information in the control panel, determining if the produced result must be loaded directly into memory or printend into a binary punched tape.
+1. The ASSGC starts by reading the Assembly Scheme and additional information from the control panel. This data determines if the produced result must be loaded directly into Main Memory or printend into a binary punched tape.
 
-2. The assembler asks throught the teleprinter the names of the subprograms to assemble in the order in which the must be loaded. Here we must specify also the name of used pseudoistruzioni.
+2. The assembler asks throught the teleprinter the names of the subprograms to assemble in the order in which they must be loaded. Here we must specify also the name of all used pseudoinstructions.
 
-3. At the end of execution, the Assemble will print over the teleprinter all the determined memory locations.
+3. At the end of execution, the assembler will print over the teleprinter all the determined memory locations.
 
 ### Error Handling
-If we introduce a different tape than the one requested, the Assembler will notice it and request to insert the correct one.
+If we introduce a different tape than the one requested, the assembler will notice it and request to insert the correct one. [[7](../helper_resources/references.md)]
 
-The assembler will stop and tell an error in the case the number of groups of passed pseudoistruzioni goes overboard or the program will call a subprogram not specified in the schema di assemblamento.
+The assembler will stop and tell an error in the case the number of groups of passed pseudoistruzioni goes overboard or the program will call a subprogram not specified in the schema di assemblamento. [[7](../helper_resources/references.md)]

@@ -80,17 +80,14 @@ Style guide:
 
 - [Manual instruction list](./src/manual_instructions.md)
 
-## 6 - Main Memory
-- [Main memory](./src/memory.md)
-
-## 7 - Programs
+## 6 - Programs
 - [CEP general system programs](./src/general_system_programs.md)
 
 - [Subprograms organization](./src/subprograms_organization.md)
 
 - [Fortran CEP](./src/fortran_cep.md)
 
-- [Assemblatore CEP](./src/cep_assembler.md)
+- [CEP's assembler](./src/cep_assembler.md)
 
 - [CEP Symbolic Programming Language (LPSC)](./src/lpsc.md)
 
@@ -100,14 +97,14 @@ Style guide:
 
 - [Error checking](./src/error_checking.md)
 
-## 8 - External devices
+## 7 - External devices
 - [External Devices](./src/external%20devices.md)
 
 - [I/O](./src/input_output.md)
 
 - [Sistema programmativo di entrata e di uscita dei dati per la CEP](./src/io_program.md)
 
-## 9 - Miscellaneous
+## 8 - Miscellaneous
 - [Speed](./src/speed.md)
 
 - [CEP's Emulator for the FINAC](./src/cep_emulator.md)
